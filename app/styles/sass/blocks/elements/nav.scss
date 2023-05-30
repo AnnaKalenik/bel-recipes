@@ -1,0 +1,75 @@
+.nav {
+    &__list {
+        @include flex;
+        gap: 30px;
+    }
+
+    &__link {
+        position: relative;
+        display: inline-flex;
+
+        font-family: inherit;
+        @include font($sz: rem(18), $lh: 25px, $wt: 400);
+
+        text-align: center;
+        color: $textcolor-dark;
+        padding: 0 0 4px 12px;
+        cursor: pointer;
+
+        &::before {
+            $size: 6px;
+            position: absolute;
+            content: '';
+            top: calc(50% - 2px);
+            left: 0;
+            width: $size;
+            height: $size;
+            border-radius: $size;
+            background: transparent;
+            transition: background $transition;
+        }
+
+        &:hover.nav__link::before {
+            background: $accent1;
+        }
+
+        &:active.nav__link::before {
+            background: $accent1;
+        }
+    }
+}
+
+.burger {
+    display: none;
+    position: relative;
+    width: 24px;
+    height: 17.5px;
+    z-index: 2;
+    cursor: pointer;
+
+    &__line {
+        position: absolute;
+        width: 24px;
+        height: 1.5px;
+        border: none;
+        background-color: $textcolor-dark;
+        transition: transform $transition, transform-origin $transition;
+
+        &_line1 {
+            top: 0px;
+            left: 0;
+        }
+
+        &_line2 {
+            top: 7.25px;
+            left: 0;
+        }
+
+        &_line3 {
+            bottom: 0px;
+            left: 0;
+        }
+    }
+}
+
+@import '_media-nav';

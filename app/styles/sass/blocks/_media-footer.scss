@@ -1,0 +1,127 @@
+@media (max-width: 1440px) {
+    .footer { 
+        &__phrase {
+            font-size: 50px;
+        }
+
+        &__part2 {
+            margin-left: 42px;
+        }
+
+        &__logo {
+            width: 92px;
+            height: 87px;
+        }
+
+        &__right {
+            width: 550px;
+        }
+
+    }
+}
+
+@media (max-width: 1200px) {
+    .footer { 
+        &__content {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 80px;
+        }
+
+        &__right {
+            width: 100%;
+        }
+
+        &__contacts {
+            justify-content: flex-start;
+            flex-direction: column;
+            gap: 25px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .footer { 
+        padding: 30px 0 29px;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer { 
+        &__content {
+            gap: 38px;
+        }
+
+        &__left {
+            gap: 14px;
+        }
+
+        &__logo {
+            width: 69.14px;
+            height: 61.25px;
+        }
+
+        &__phrase {
+            font-size: 32px;
+        }
+
+        &__part1 {
+            margin-top: 0px;
+        }
+    
+        &__part2 {
+            margin-top: -7px;
+            margin-left: 27px;
+        }
+
+        &__right {
+            font-size: 15px;
+            gap: 30px;
+        }
+
+        &__contacts {
+            gap: 15px;
+            padding-bottom: 23px;
+        }
+
+        &__title {
+            margin-bottom: 7px;
+        }
+
+        &__text {
+            font-size: 14px;
+            line-height: 16px;
+        }
+
+        &__soc-links {
+            gap: 15px !important;
+        }
+
+        &__icon {
+            width: 30px !important;
+            height: 30px !important;
+        }
+
+        &__instagram {
+            display: none !important;
+        }
+    }
+}
+
+@media (max-width: 374px) {
+    .footer { 
+        &__left {
+            gap: 10px;
+        }
+
+        &__phrase {
+            font-size: 28px;
+        }
+
+        &__part2 {
+            margin-top: -2px;
+            margin-left: 24px;
+        }
+    }
+}

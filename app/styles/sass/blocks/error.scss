@@ -1,0 +1,21 @@
+.error {
+    height: 100%;
+
+    &__container {
+        @include flex($dir: column, $jc: space-between);
+        gap: 60px;
+        max-height: 700px;
+        height: 100%;
+        padding: 100px 5.3333% 100px;
+    }
+
+    &__title-3 {
+        @include font($sz: Min(Max(90px,10vw),140px), $lh: 120%, $wt: 700);  
+        text-align: center;
+    }
+
+    &__text {
+        @include font($sz: Min(Max(22px,2.5vw),32px), $lh: 140%);
+        text-align: center;
+    }
+}

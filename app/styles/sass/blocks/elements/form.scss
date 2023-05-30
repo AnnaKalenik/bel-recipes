@@ -1,0 +1,361 @@
+.form * {
+    outline: 0;
+    outline-offset: 0;
+}
+
+// .form {
+//     &__title-3 {
+//         width: 230px;
+//     }
+
+//     &__title-cart {
+//         @include font($sz: rem(24), $lh: 120%, $wt: 500);
+//     }
+
+//     &__body {
+//         display: grid;
+//         grid-template-columns: repeat(2, 1fr);
+//         grid-template-rows: 1fr;
+//         border-radius: $radius-card;
+//         overflow: hidden;
+
+//         &_small {
+//             grid-template-columns: 1fr;
+//             grid-template-rows: repeat(3fr);
+//             border-radius: none;
+//         }
+//     }
+
+//     &__title-4 {
+//         @include font($sz: Min(Max(18px,3.5vw),24px), $lh: 120%, $wt: 500);
+//         padding: 0 20px;
+//         margin-bottom: 20px;
+//     }
+
+//     &__container {
+//         display: grid;
+//         grid-template-columns: repeat(2, 1fr);
+//         grid-template-rows: 1fr;
+//         gap: 40px;
+//         background: $background-block-gray;
+//         border-radius: $radius;
+//         overflow: hidden;
+//         padding: 20px;
+//     }
+
+//     &__left {
+//         display: grid;
+//         grid-template-columns: repeat(2, 1fr);
+//         grid-template-rows: 1fr;
+//         background: $background-block-gray;
+//         border-radius: $radius;
+//         overflow: hidden;
+//     }
+
+//     &__right {
+//         @include flex($dir: column, $jc: space-between, $ai: stretch);
+//         gap: 20px;
+//     }
+
+//     &__fields {
+//         @include flex($dir: column, $ai: stretch);
+//         gap: 30px;
+//         background: $background-block-gray;
+//         padding: Min(Max(20px,5.5vw),40px);
+
+//         &_small {
+//             gap: 20px;
+//             background: none;
+//             padding: 0;
+//         }
+//     }
+
+//     &__section {
+//         @include flex($dir: column, $ai: stretch);
+//         gap: 10px;
+//         border: none;
+//         margin: 0;
+//         padding: 0;
+//     }
+
+//     &__name {
+//         @include font($sz: rem(18), $lh: 120%, $wt: 500);
+//         margin-bottom: Min(Max(15px,3.5vw),20px);
+//     }
+
+//     &__item {
+//         position: relative;
+//         @include flex ($jc: stretch);
+
+//         &_big-margin {
+//             margin-bottom: 20px;
+//         }
+//     }
+
+//     &__label {
+//         position: absolute;
+//         left: 20px;
+//         top: calc(50% - 10px);
+//         @include font($sz: rem(14), $lh: 140%, $wt: 400);
+//         color: $textcolor-small;
+//         display: block;
+//         padding-right: 15px;
+//         animation: moveBottomLabel 0.3s;
+
+//         &_top {
+//             top: 15px; 
+//         }
+
+//         &_active {
+//             font-size: rem(11);
+//             line-height: 15px;
+//             animation: moveTopLabel 0.2s; 
+//             top: 7px;
+//         }
+
+//         @keyframes moveTopLabel {
+//             from {
+//                top: 15px;
+//                font-size: rem(14);
+//             }
+            
+//             to {
+//                 top: 7px;
+//                 font-size: rem(11);
+//             }
+//         }
+
+//         @keyframes moveBottomLabel {
+//             from {
+//                top: 7px;
+//             }
+            
+//             to {
+//                 top: 15px;
+//             }
+//         }
+//     }
+
+//     &__input {
+//         height: calc(50px - 15px);
+//         width: calc(100% - 40px);
+//         @include font($sz: rem(16), $lh: 18px, $wt: 400);
+//         border-radius: $radius;
+//         border: none;
+//         padding: 15px 20px 0;
+//         transition: all 0.8s ease;
+
+//         &_big {
+//             min-height: calc(90px - 25px);
+//             resize: none;
+//             padding: 25px 20px 0;
+//         }
+
+//         &:focus {
+//             box-shadow: 0 0 15px #cecece;
+//         }
+//     }
+
+//     &__products {
+//         @include flex($dir: column, $jc: flex-start, $ai: stretch);
+//         gap: 15px;
+//         background: $background-light;
+//         padding: Min(Max(20px,5.5vw),40px);
+//     }
+
+//     &__wrap {
+//         @include flex($dir: column, $ai: center);
+//         gap: 20px;
+//     }
+
+//     &__area {
+//         position: relative;
+//         height: 100%;
+//         @include flex($dir: column);
+//         background: $background-light;
+//         border: 1px dashed $accent;
+//         border-radius: $radius;
+//         padding: 10px;
+//         overflow: hidden;
+//     }
+
+//     &__label-2 {
+//         @include flex;
+//         width: 250px;
+//         height: 82px;
+//         @include font($sz: Min(Max(14px,2.5vw),18px), $lh: 18px, $wt: 500);
+//         color: $accent;
+//         background: rgba(0, 132, 255, 0.05);
+//         border: 1px solid rgba(0, 132, 255, 0.3);
+//         border-radius: $radius;
+//         cursor: pointer;
+//         transition: background $transition;
+
+//         &:hover {
+//             background: rgba(0, 132, 255, 0.15);
+//         }
+//     }
+
+//     &__file {
+//         display: none;
+//     }
+
+//     &__text {
+//         width: 60%;
+//         @include font($sz: Min(Max(12px,2.5vw),14px), $lh: 140%);
+//         text-align: center;
+//         color: rgba(0, 132, 255, 0.6);
+//         margin-top: Min(Max(10px,2.5vw),22px);
+//     }
+
+//     &__preview {
+//         position: absolute;
+//         background: $background-gray;
+//         top: 0;
+//         left: 0;
+//     }
+
+//     &__img-wrap {
+//         width: 350px;
+//         height: 224px;
+//     }
+
+//     &__img {
+//         width: 100%;
+//         height: 100%;
+//         object-fit: cover;
+//     }
+
+//     &__delete {
+//         position: absolute;
+//         top: 20px;
+//         right: 20px;
+//         width: 32px;
+//         height: 32px;
+
+//         @include flex;
+//         background: $background-light;
+//         border-radius: 100px;
+//         cursor: pointer;
+//         transition: opacity $transition;
+
+//         &:hover .form__icon{
+//             opacity: 1;
+//         }
+//     }
+
+//     &__icon {
+//         fill: $textcolor-dark;
+//         height: 16px;
+//         width: 16px;
+//         opacity: 0.6;
+//         transition: opacity $transition;
+//     }
+
+//     &__rating {
+//         justify-content: space-between !important;
+//         background: $background-light;
+//         border-radius: $radius;
+//         padding: 0px 20px;
+//         min-height: 50px;
+//     }
+
+//     &__button {
+//         width: 100%;
+//     }
+
+//     &__politics {
+//         display: block;
+//         width: 80%;
+//         @include font($sz: rem(12), $lh: 120%);
+//         opacity: 0.6;
+//         text-align: center;
+//     }
+// }
+
+// .options {
+//     width: 100%;
+//     @include flex($dir: column, $ai: stretch);
+//     gap: 10px;
+
+//     &__item {
+//         height: 50px;
+//         width: calc(100% - 40px);
+
+//         display: grid;
+//         grid-template-columns: 24px auto;
+//         grid-template-rows: 1fr;
+//         gap: 15px;
+
+//         border-radius: $radius;
+//         background: $background-light;
+//         padding: 0 20px;
+//         cursor: pointer;
+
+//         & > * { 
+//             align-self: center;
+//         }
+//     }
+
+//     &__input {
+//         appearance: none;
+//         position: relative;
+//         width: 24px;
+//         height: 24px;
+//         border: 2px solid #E6E6E6;
+//         border-radius: 50%;
+      
+//         outline: none;
+//         transition: all $transition;
+//         cursor: pointer;
+
+//         &:checked {
+//             border: 2px solid $accent;
+
+//             &::after {
+//                 content: "";
+//                 position: absolute;
+//                 top: 3px;
+//                 left: 3px;
+//                 width: 14px;
+//                 height: 14px;
+//                 background-color: $accent;
+//                 border-radius: 50%;
+//             }
+//         }
+//     }
+
+//     &__label {
+//         width: 100%;
+//         height: 100%;
+//         position: relative;
+
+//         @include flex ($jc: space-between);
+//         gap: 10px;
+
+//         @include font($sz: Min(Max(14px,2.5vw),16px), $lh: 18px, $wt: 400);
+//         color: $textcolor-dark;
+//         cursor: pointer;
+//     }
+
+//     &__text {
+//         @include font($sz: rem(14), $lh: 140%, $wt: 600);
+//         flex-basis: 70px;
+//         text-align: right;
+
+//         &_blue {
+//             color: $accent;
+//         }
+
+//         &_black {
+//             color: $textcolor-dark;
+//         }
+//     } 
+
+//     &__img {
+//         width: 152px;
+//         height: 33px;
+//     }
+// }
+
+@import '_media-form';

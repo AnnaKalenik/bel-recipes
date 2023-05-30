@@ -1,0 +1,77 @@
+.footer {
+    background: $background-footer;
+    padding: 60px 0 53px;
+
+    &__content {
+        @include flex($jc: space-between, $ai: center);
+        gap: 30px;
+    }
+
+    &__left {
+        @include flex($jc: flex-start);
+        gap: 27px;
+    }
+
+    &__phrase {
+        @include flex($dir: column, $ai: flex-start, $jc: space-between);
+        font-family: $userfont1;
+        @include font($sz: rem(68), $lh: 100%, $wt: 700);
+        color: $textcolor-light;
+        opacity: 0.3;
+    }
+
+    &__part1 {
+        margin-top: -12px;
+    }
+
+    &__part2 {
+        margin-top: -17px;
+        margin-left: 56px;
+    }
+
+    &__right {
+        width: 620px;
+        @include flex($dir: column, $ai: stretch);
+        gap: 20px;
+    }
+
+    &__contacts {
+        @include flex($jc: space-between, $ai: flex-start);
+        gap: 30px;
+        border-bottom: 1px solid $accent2;
+        padding-bottom: 36px;
+    }
+
+    &__wrap {
+        @include flex($dir: column, $ai: stretch);
+    }
+
+    &__title {
+        margin-bottom: 15px;
+        color: $textcolor-light; 
+    }
+    
+    &__link {
+        color: $textcolor-dark; 
+        transition: color $transition;
+
+        &:hover {
+            color: $accent1;
+        }
+    }
+
+    &__copyright {
+        @include flex($jc: space-between);
+        gap: 30px;
+    }
+
+    &__text {
+        color: $textcolor-light; 
+    }
+
+    &__soc-links {
+        gap: 20px !important;
+    }
+}
+
+@import '_media-footer';

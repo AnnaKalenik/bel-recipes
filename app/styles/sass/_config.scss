@@ -1,0 +1,188 @@
+@use "sass:math";
+
+// VARIABLES
+
+$userfont1: 'TRY Clother', sans-serif;
+$userfont2: 'Gilroy', sans-serif;
+
+$textcolor-dark: #2A2A2A; 
+$textcolor-light: #FFFFFF;
+$textcolor-light-gray: #A1A1A1;; 
+$textcolor-dark-gray: #6A6A6A; 
+
+$background-header: #FFFFFF; 
+$background-header-mob: #D7DCD6;
+$background-site: #DEEAEB; 
+$background-site-product: #E9F4F1; 
+$background-footer: #D7DCD6; 
+
+$background-block-1: #9FD6D3; 
+$background-block-2: #F4F3F8;
+$background-block-3: #FFFFFF;
+
+$background-product-card: #FFFFFF; 
+$background-product-img: #D9D9D9; 
+$background-product-info: #F1F5F5; 
+
+$background-window-info: rgba(213, 218, 211, 0.9); 
+$background-window-info2: rgba(255, 255, 255, 0.8); 
+$background-window-info3: rgba(114, 208, 202, 0.85); 
+
+$accent1: #C6202C;
+$accent2: #5E8D66;
+$accent3: #72D0CA;
+$accent4: #79378A;
+
+$border-form: 1.5px solid #D9D9D9;
+$border-card: 1px solid #E0ECE9;
+$border-card-hover: 4px solid #E0ECE9;
+
+$radius-block: 50px;
+$radius-header: 40px;
+$radius-btn: 30px;
+$radius-search: 22.5px;
+$radius-card: 20px;
+$radius-window-info: 15px;
+$radius-window-info2: 35px;
+
+$shadow-btn: 0px 6px 12px rgba(198, 32, 44, 0.3);
+$shadow-search: 4px 4px 10px rgba(42, 42, 42, 0.15);
+
+$transition: 0.3s cubic-bezier(.62, .33, .53, .89);
+
+$container_padding: 80px 135px;
+$container_padding-mob: 30px 5.3333% 40px;
+
+// FUNCTIONS
+
+@function rem($px) {
+	$result: math.div($px, 16) + rem;
+	@return $result;
+}
+
+// MIXIN 
+
+@mixin font($sz: rem(16),
+			$lh: 120%, 
+			$wt: 500, 
+			$stl: normal) {
+	font-size: $sz;
+	line-height: $lh;
+	font-weight: $wt;
+	font-style: $stl;
+}
+
+@mixin flex ($dir: row,
+             $jc: center,
+             $ai: center) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+@mixin container($content-width: rem(1440),
+				 $container-offset: rem(35)) {
+	padding: 0 $container-offset;
+	max-width: calc($content-width + ($container-offset * 2));
+}
+
+// GENERAL CSS SETTINGS
+
+html {
+	scroll-behavior: smooth;
+}
+
+.page {
+	position: relative;
+	font-family: $userfont2;
+	@include font ($sz: 16px);
+	color: $textcolor-dark;
+	background: $background-site;
+	min-width: 320px;
+	min-height: 100%;
+	overflow: hidden;
+
+	&__cover {
+		display: none;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: $textcolor-dark-gray;
+		mix-blend-mode: multiply;
+		z-index: 1;
+	}
+}
+
+.wrapper {
+	min-height: 100vh;
+	height: auto;
+	width: 100%;
+	@include flex ($dir: column, $jc: space-between, $ai: stretch);
+	position: relative;
+	overflow: hidden;
+}
+
+.container {
+	margin: 0 auto;
+	@include container;
+
+	@media (max-width: 768px) {
+		padding: 0 rem(15);
+	}
+}
+
+.main {
+	margin-top: 152px;
+
+	@media (max-width: 768px) {
+		margin-top: 105px;
+	}
+}
+
+.title-h1,
+.title-h2 {
+	@include font($sz: Min(Max(32px,5vw),42px), $lh: 110%, $wt: 500);
+	text-align: center;
+}
+
+.title-h3 {
+	@include font($sz: Min(Max(24px,5vw),32px), $lh: 120%, $wt: 500);
+	margin-bottom: Min(Max(15px,2.5vw),40px);
+}
+
+.title-h4 {
+	@include font($sz: rem(24), $lh: 120%, $wt: 500);
+}
+
+.subtitle {
+	@include font($sz: Min(Max(14px,3.5vw),18px), $lh: 140%, $wt: 500);
+	margin-bottom: Min(Max(10px,2.5vw),20px);
+}
+
+.text {
+	@include font($sz: Min(Max(12px,2.5vw),18px), $lh: 140%, $wt: 400);
+}
+
+.btn {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	@include font($sz: rem(12), $lh: 20px, $wt: 500);
+	letter-spacing: 0.1em;
+	color: $textcolor-light;
+	background: $accent1;
+	text-align: center;
+	text-transform: uppercase;
+	border-radius: 28px;
+	cursor: pointer;
+	padding: 10px 30px;
+
+	&:hover {
+		filter: hue-rotate(-75deg);
+		box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4);
+	}
+}
+
