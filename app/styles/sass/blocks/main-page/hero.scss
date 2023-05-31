@@ -1,0 +1,92 @@
+.hero {
+    position: relative;
+
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+    }
+
+    &__container {
+        position: relative;
+        padding-top: 358px;
+        padding-bottom: 103px;
+        z-index: 1;
+
+        @include flex($dir: column, $jc: space-between, $ai: stretch);
+        gap: 247px;
+    }
+
+    &__info-top {
+        @include flex($jc: space-between, $ai: flex-start);
+        gap: 80px;
+    }
+
+    &__title {
+        margin-bottom: 24px;
+        margin-left: -5px;
+    }
+
+    &__subtitle {
+        font-family: $userfont2;
+        @include font($sz: 56px, $lh: 65px, $wt: 400);
+        color: $textcolor-light;
+    }
+
+    &__btn {
+        margin-top: 41px;
+    }
+
+    &__info-bottom {
+        @include flex($jc: flex-end , $ai: flex-start);
+        position: relative;
+    }
+
+    &__btn-look {
+        position: absolute;
+        bottom: -55px;
+        left: -98px;
+    }
+
+    &__fund {
+        @include flex($dir: column, $jc: space-between, $ai: flex-start);
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: '';
+            top: -25px;
+            left: -42px;
+            width: 102px;
+            height: 94px;
+            background: url('../images/dist/main-page/hero-heart.svg') no-repeat center / contain;
+            border-radius: 1px; 
+            z-index: 0;
+        }
+    }
+
+    &__text {
+        font-family: $userfont1;
+        color: $textcolor-light;
+        position: relative;
+        z-index: 1;
+
+        &_big {
+            @include font($sz: 24px, $lh: 110%, $wt: 700);
+        }
+
+        &_small {
+            @include font($sz: 20px, $lh: 120%, $wt: 400);
+        }
+
+        &:nth-child(2) {
+            margin-left: -10px;      
+        }
+    }
+}
+
+@import '_media-hero';

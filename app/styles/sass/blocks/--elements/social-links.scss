@@ -1,0 +1,38 @@
+.social-links {
+    @include flex($jc: flex-start);
+    gap: 25px;
+
+    &_footer {
+        @include flex($jc: flex-start);
+        gap: 20px;
+    }
+
+    &_hero {
+        @include flex($jc: flex-start);
+        flex-direction: column;
+        margin-top: 22px;
+    }
+
+    &__item {
+        display: inline-flex;
+        cursor: pointer;
+        border-radius: 50%;
+        transition: box-shadow $transition;
+        
+        &:hover {
+            box-shadow: $shadow-search;
+        }
+    }
+
+    &__icon {
+        width: 40px;
+        height: 40px;
+
+        &_hero {
+            width: 45px;
+            height: 45px;
+        }
+    }
+}
+
+@import '_media-social-links';

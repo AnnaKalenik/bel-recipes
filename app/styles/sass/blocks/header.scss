@@ -4,6 +4,7 @@
     font-family: $userfont1;
     width: 100%;
     transition: height $transition;
+    z-index: 2;
 
     &__container {
         @include container($content-width: rem(1536), $container-offset: rem(15)); 

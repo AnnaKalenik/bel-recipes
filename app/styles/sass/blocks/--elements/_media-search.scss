@@ -1,0 +1,38 @@
+@media (max-width: 1200px) {
+    .search {   
+        &_mobile {
+            position: static;
+        }
+    
+        &__panel {  
+            &_mobile {
+                position: relative;
+                top: 0px;
+                right: 0px;
+                max-width: 700px;
+                width: 100%;
+    
+                &::after {
+                    position: absolute;
+                    content: '';
+                    top: 8px;
+                    right: 11px;
+                    width: 16px;
+                    height: 16px;
+                    background: url('../images/dist/header/search.svg') no-repeat center / contain;
+                }
+            }
+        }
+    
+        &__input {  
+            &_mobile {
+                padding: 0px 35px 2px 11px;
+                transform: translate(0,0) scaleX(1);
+    
+                &::placeholder {
+                    font-family: $userfont2;
+                }
+            }
+        }
+    }
+}
