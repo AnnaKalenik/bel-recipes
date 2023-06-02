@@ -1,0 +1,72 @@
+.assortment {
+
+    &__container {
+        margin: 95px auto;
+        @include container($content-width: rem(1800), $container-offset: rem(35));  
+    }
+
+    &__block {
+        position: relative;
+        min-height: calc(400px + (700 - 400) * ((100vw - 375px) / (1920 - 375)));
+        height: 100%;
+        @include flex($ai: flex-end);
+        padding: 68px 30px;
+
+        background: $background-block-1;
+        border-radius: $radius-block;
+        overflow: hidden;
+    }
+
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+    }
+
+    &__content {
+                position: relative;
+        @include flex($dir: column);
+        width: 100%;
+        gap: calc(80px + (132 - 80) * ((100vw - 375px) / (1920 - 375)));
+    }
+
+    &__title {
+        position: relative;
+        font-size: calc(44px + (126 - 44) * ((100vw - 375px) / (1920 - 375)));
+        line-height: calc(62px + (176 - 62) * ((100vw - 375px) / (1920 - 375)));
+        color: $textcolor-light;
+        text-align: center;
+
+        &::before,
+        &::after {
+            position: absolute;
+            content: '';
+            top: calc(60%);
+            width: calc(7px + (20 - 7) * ((100vw - 375px) / (1920 - 375)));
+            height: calc(7px + (20 - 7) * ((100vw - 375px) / (1920 - 375)));
+            background: $accent1;
+        }
+
+        &::before {
+            left: calc(-16px + (-57 + 16) * ((100vw - 375px) / (1920 - 375)));
+        }
+
+        &::after {
+            right: calc(-16px + (-57 + 16) * ((100vw - 375px) / (1920 - 375)));
+        }
+    }
+
+    &__btn-wrap {
+        // position: relative;
+        @include flex($jc: flex-start);
+        max-width: 305px;
+        margin-left: calc(305px - 234px);
+        width: 100%;
+    }
+}
+
+@import '_media-assortment';

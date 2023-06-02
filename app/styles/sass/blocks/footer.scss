@@ -1,6 +1,24 @@
 .footer {
     background: $background-footer;
     padding: 60px 0 53px;
+    position: relative;
+
+    &__btn-call {
+		position: absolute;
+		top: -136px;
+		right: 118px;
+		width: 80px;
+		height: 80px;
+		background: url('../images/dist/main-page/btn-CALL-BACK.svg') no-repeat center / contain;
+        border-radius: 50%;
+        box-shadow: 4px 4px 25px rgba(42, 42, 42, 0.15);
+        cursor: pointer;
+        transition: box-shadow $transition;
+        
+        &:hover {
+            box-shadow: 4px 8px 25px rgba(42, 42, 42, 0.30);
+        }
+	}
 
     &__content {
         @include flex($jc: space-between, $ai: center);

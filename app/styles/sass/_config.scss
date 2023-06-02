@@ -153,23 +153,24 @@ html {
 }
 
 .title-h2 {
-	@include font($sz: Min(Max(32px,5vw),42px), $lh: 110%, $wt: 500);
-	text-align: center;
+	font-family: $userfont1;
+	font-weight: 700;
+	// @include font($sz: 126px, $lh: 176px, $wt: 700);
 }
 
-.title-h3 {
-	@include font($sz: Min(Max(24px,5vw),32px), $lh: 120%, $wt: 500);
-	margin-bottom: Min(Max(15px,2.5vw),40px);
-}
+// .title-h3 {
+// 	@include font($sz: Min(Max(24px,5vw),32px), $lh: 120%, $wt: 500);
+// 	margin-bottom: Min(Max(15px,2.5vw),40px);
+// }
 
-.title-h4 {
-	@include font($sz: rem(24), $lh: 120%, $wt: 500);
-}
+// .title-h4 {
+// 	@include font($sz: rem(24), $lh: 120%, $wt: 500);
+// }
 
-.subtitle {
-	@include font($sz: Min(Max(14px,3.5vw),18px), $lh: 140%, $wt: 500);
-	margin-bottom: Min(Max(10px,2.5vw),20px);
-}
+// .subtitle {
+// 	@include font($sz: Min(Max(14px,3.5vw),18px), $lh: 140%, $wt: 500);
+// 	margin-bottom: Min(Max(10px,2.5vw),20px);
+// }
 
 .text {
 	@include font($sz: Min(Max(12px,2.5vw),18px), $lh: 140%, $wt: 400);
@@ -192,12 +193,6 @@ html {
 	padding: 20px 35px 25px;
 	cursor: pointer;
 	width: auto;
-
-	@media (min-width: 768px) {
-		&:hover .btn__arrow {
-			width: 30px;
-		}
-	}
 
 	&__arrow {
 		position: relative;
@@ -230,6 +225,31 @@ html {
 		}
 	}
 
+	@media (min-width: 768px) {
+		&:hover .btn__arrow {
+			width: 30px;
+		}
+		
+		// &_animaited {
+		// 	position: relative;
+		// 	animation: moveLeft 0.3s linear normal running both;
+	
+		// 	&:hover {
+		// 		animation: moveRight 0.3s linear normal running both;
+	
+		// 		@keyframes moveRight {
+		// 			0% {left: 0;}
+		// 			100% {left: 5px;}
+		// 		}
+		// 	}
+	
+		// 	@keyframes moveLeft {
+		// 		0% {left: 5px;}
+		// 		100% {left: 0px;}
+		// 	}
+		// }
+	}
+
 	@media (max-width: 576px) {
 		font-size: 14px;
 		line-height: 14px;
@@ -237,6 +257,7 @@ html {
 	}
 
 	@media (max-width: 425px) {
+		max-width: 305px;
 		width: 100%;
 	}
 }

@@ -1,0 +1,26 @@
+@media (max-width: 768px) {
+    .assortment {
+        &__container {
+            margin: 84px auto;
+            padding: 0 15px;
+        }
+
+        &__block {
+            padding: 75px 20px;
+        }
+
+        &__btn-wrap {
+            justify-content: center;
+            margin-left: 0;
+            max-width: auto;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .assortment {
+        &__block {
+            border-radius: 9.6px;
+        }   
+    }
+}
