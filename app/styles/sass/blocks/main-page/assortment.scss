@@ -28,7 +28,7 @@
     }
 
     &__content {
-                position: relative;
+        position: relative;
         @include flex($dir: column);
         width: 100%;
         gap: calc(80px + (132 - 80) * ((100vw - 375px) / (1920 - 375)));

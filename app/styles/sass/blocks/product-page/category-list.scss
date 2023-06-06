@@ -1,0 +1,231 @@
+.category {
+    padding-top: calc(167px + (313 - 167) * ((100vw - 375px) / (1920 - 375)));
+    padding-bottom: calc(80px + (115 - 80) * ((100vw - 375px) / (1920 - 375)));
+    background: $background-site-product;
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(auto, 1fr);
+        gap: 23px 24px;
+    }
+
+    &__card {
+        justify-self: center;
+        align-self: stretch;
+
+        width: 100%;
+        @include flex($dir: column, $ai: stretch, $jc: space-between);
+
+        background: $background-product-card;
+        border: $border-card;
+        border-radius: $radius-card;
+        overflow: hidden;
+
+        cursor: pointer;
+        transition: box-shadow $transition;
+
+        &:hover {
+            box-shadow: 0px 0px 0px 3px #E0ECE9;
+        }
+
+        &:hover .category__btn-text {
+            color: $textcolor-dark;
+            margin-right: 20px;
+        }
+
+        &:hover .category__btn-icon {
+            opacity: 1;
+        }
+
+        &:hover .category__btn-circle {
+            opacity: 1;
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    &__images {
+        @include flex($jc: flex-start);
+        gap: 9px;
+        padding: 30px 26px;
+    }
+
+    &__product-img {
+        width: 135px;
+        height: 230px;
+        @include flex;
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__product-slice {
+        @include flex($dir: column);
+        gap: 45px;
+        position: relative;
+    }
+
+    &__slice {
+        @include flex;
+        border-radius: 50%;
+        overflow: hidden;
+
+        &_big {
+            width: 115px;
+            height: 115px;
+            border: 2px solid $textcolor-light;
+            box-shadow: 0px 0px 0px 2px $background-block-1;
+        }
+
+        &_small {
+            width: 60px;
+            height: 60px;
+            position: relative;
+            z-index: 0;
+
+            &::before {
+                position: absolute;
+                content: '';
+                top: calc(50% - 4px);
+                left: calc(50% - 4px);
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: $background-block-1;
+            }
+        }
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__line {
+        position: absolute;
+        z-index: 1;
+        bottom: 30px;
+        left: calc(50% - 1px);
+        width: 2px;
+        height: 69px;
+        background: $background-block-1;
+    }
+
+    &__description {
+        background: $background-product-info;
+        border-radius: $radius-card $radius-card 0 0;
+        padding: 35px 30px 14px;
+    }
+
+    &__name {
+        font-family: $userfont2;
+        font-size: calc(18px + (20 - 18) * ((100vw - 375px) / (1920 - 375)));
+        color: $textcolor-dark;
+        font-weight: 600;
+        line-height: 110%;
+        padding-bottom: 20px;
+    }
+
+    &__options {
+        @include flex($jc: flex-start, $ai: flex-start);
+        gap: 56px;
+    }
+
+    &__left-list {
+        @include flex($dir:column, $jc: flex-start, $ai: stretch);
+        gap: 15px;
+    }
+
+    &__left-item {
+        @include flex($jc: flex-start);
+        max-width: 39px;
+        max-height: 29px;
+    }
+
+    &__icon {
+        width: auto;
+        height: auto;
+    }
+
+    &__right-list {
+        @include flex($dir:column, $jc: flex-start, $ai: stretch);
+        gap: 12px;
+    }
+
+    &__right-item {
+        @include flex($jc: flex-start);
+        gap: 10px;
+    }
+
+    &__right-wrap {
+        @include flex($jc: flex-start);
+        max-width: 20px;
+        max-height: 18px;
+    }
+
+    &__text {
+        font-family: $userfont2;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 110%;
+        color: $textcolor-dark-gray;
+        word-break: word-break;
+    }
+
+    &__button {
+        position: relative;
+        @include flex($jc: flex-end);
+        background: $background-product-info;
+        padding: 10px 15px 15px;
+    }
+
+    &__btn-text {
+        font-family: $userfont1;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 17px;
+        color: $textcolor-light-gray;
+        text-transform: uppercase;
+        cursor: pointer;
+        margin-right: -11px;
+        transition: color $transition, margin-right $transition;
+    }
+
+    &__btn-icon {
+        position: relative;
+        width: 30px;
+        height: 30px;  
+        border-radius: 50%;
+        opacity: 0;
+        transition: opacity $transition;
+    }
+
+    &__btn-circle {
+        position: absolute;
+        left: 50%;
+        top: 50%;                     
+        transform: translate(-50%, -50%);
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        box-shadow: 0px 7.2px 14.4px rgba(198, 32, 44, 0.3);
+        background: $accent1;
+        
+        transition: width $transition, height $transition;
+    }
+
+    &__btn-arrow {
+        position: absolute;
+        left: 50%;
+        top: 50%;                     
+        transform: translate(-50%, -50%);
+        box-shadow: 0px 7.2px 14.4px rgba(198, 32, 44, 0.3);
+    }
+}
+
+@import '_media-category-list';

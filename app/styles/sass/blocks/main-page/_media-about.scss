@@ -1,0 +1,21 @@
+@media (max-width: 1920px) {
+    .about {
+        background-position: bottom 10% left, bottom 10% right;
+        background-size: 50% auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .about {
+        // &__container {
+        //     margin: 84px auto;
+        //     padding: 0 15px;
+        // }
+    }
+}
+
+@media (max-width: 576px) {
+    .about {
+  
+    }
+}

@@ -1,0 +1,81 @@
+.categories {
+    padding-top: calc(167px + (313 - 167) * ((100vw - 375px) / (1920 - 375)));
+    padding-bottom: calc(80px + (120 - 80) * ((100vw - 375px) / (1920 - 375)));
+    background: $background-site-product;
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 70px 29px;
+    }
+
+    &__item {
+        justify-self: center;
+        align-self: stretch;
+        @include flex($dir: column, $ai: stretch, $jc: space-between);
+        max-width: 328px;
+        width: 100%;
+        // min-height: 328px;
+        border: $border-card-hover transparent;
+        border-radius: 30px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: border $transition, max-width $transition;
+
+        &:hover {
+            position: relative;
+            border: $border-card-hover;
+            max-width: 332px;
+        }
+
+        &:hover .categories__name {
+            padding: 25px 27px;
+        }
+    }
+
+    &__link {
+        background: $background-product-card;
+        height: 100%;
+    }
+
+    &__wrap {
+        position: relative;
+        @include flex;
+        height: 280px;
+        background: $background-product-img;
+        border-radius: 0 0 $radius-card $radius-card;
+
+        &:before {
+            position: absolute;
+            z-index: 0;
+            content: '';
+            top: 0;
+            left: 0;
+            width: 80px;
+            height: 80px;
+            background: url('../images/dist/product-page/pattern.svg') no-repeat center / contain
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__name {
+        width: 100%;
+        font-size: calc(15px + (22 - 15) * ((100vw - 375px) / (1920 - 375)));
+        font-family: $userfont2;
+        color: $textcolor-dark;
+        font-weight: 600;
+        line-height: 0.91;
+        padding: 25px;
+        transition: padding $transition;
+    }
+}
+
+@import '_media-categories';
