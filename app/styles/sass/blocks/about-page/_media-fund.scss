@@ -1,0 +1,106 @@
+@media (max-width: 1920px) {
+    .fund {
+        &__title {
+            font-size: calc(28px + (48 - 28) * ((100vw - 375px) / (1920 - 375)));
+        }
+           
+        &__text1 {
+            font-size: calc(16px + (24 - 16) * ((100vw - 375px) / (1920 - 375)));
+        }
+    
+        &__sum {
+            font-size: calc(30px + (46 - 30) * ((100vw - 375px) / (1920 - 375)));
+        }
+        
+        &__text2 {
+            font-size: calc(20px + (26 - 20) * ((100vw - 375px) / (1920 - 375)));
+        }
+    
+        &__item {
+            font-size: calc(16px + (18 - 16) * ((100vw - 375px) / (1920 - 375)));
+        }
+    
+        &__paragraph {
+            font-size: calc(15px + (16 - 15) * ((100vw - 375px) / (1920 - 375)));
+        }    
+    }
+}
+
+
+@media (max-width: 1440px) {
+    .fund {
+        &__img-wrap {
+            padding: 80px 0 0 80px;
+        }
+
+        &__img {
+            left: 80px;
+        }
+
+        &__content {
+            padding: 68px 80px 76px 0;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .fund {
+
+        &__container {
+            margin: 300px auto Min(Max(80px,10.5vw), 115px);
+        }
+
+        &__block {   
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            border-radius: 34px;
+            padding: Min(Max(35px,5.5vw), 80px) Min(Max(20px,5.5vw), 80px);
+        }
+
+        &__img-wrap {
+            position: static;
+            @include flex($dir: column);
+            gap: 39px;
+            padding: 0;
+        }
+
+        &__img {  
+            position: static;
+        }
+
+        &__content {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+            padding: 0;
+        }
+
+        &__title {
+            margin-left: 0;
+        }
+
+        &__text2 {
+            line-height: 120%;
+        }
+
+        &__item {
+            line-height: 135%;
+        }
+
+        &__paragraph {
+            line-height: 110%;
+        }
+
+        &__promotion {
+            margin-top: 0px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .fund {
+        &__container {
+            padding: 0 15px;
+        }
+    }
+}

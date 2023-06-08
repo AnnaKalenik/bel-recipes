@@ -1,46 +1,47 @@
-// .pagination {
-//     @include flex;
-//     gap: 10px;
-//     margin-top: Min(Max(40px,5.5vw),50px);
+.pagination {
+    @include flex($jc: flex-end);
+    gap: 5px;
+    margin-top: Min(Max(46px,5.5vw),60px);
 
-//     &__btn {
-//         @include flex;
-//         width: 40px;
-//         height: 40px;
-//         color: $textcolor-dark;
-//         border-radius: 50%;
-//         box-sizing: border-box;
-//         cursor: pointer;
-//         transition: border $transition;
+    &__btn {
+        @include flex;
+        width: 35px;
+        height: 35px;
+        font-family: $userfont2;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 120%;
+        color: $textcolor-dark-gray;
+        border-radius: 50%;
+        box-sizing: border-box;
+        transition: border $transition;
 
-//         &:hover {
-//             border: 1px solid $textcolor-dark;
-//         }
+        &_prev,
+        &_next,
+        &_page  {
+            cursor: pointer;
+        }
 
-//         &_prev,
-//         &_next  {
-//             border: 1px solid $textcolor-light-gray1;
-    
-//             &:hover .pagination__icon {
-//                 opacity: 1;
-//             }
-//         }
+        &_prev,
+        &_next  {   
+            width: 7px;
+            height: 12px;
+        }
 
-//         &_page {
-//             border: 1px solid transparent;
-//         }
+        &_current  {
+            background: $accent2;
+            color: $textcolor-light;
+        }
+    }
 
-//         &_current  {
-//             background: $background-gray;
-//             color: $textcolor-light-gray2;
-//         }
-//     }
+    &__icon {
+        height: 12px;
+        width: auto;
+    }
+}
 
-//     &__icon {
-//         height: 16px;
-//         width: auto;
-//         fill: $textcolor-dark;
-//         opacity: 0.6;
-//         transition: opacity $transition;
-//     }
-// }
+@media (max-width: 576px) {
+    .pagination {
+        justify-content: center;
+    }
+}

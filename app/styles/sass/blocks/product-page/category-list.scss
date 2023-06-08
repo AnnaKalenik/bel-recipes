@@ -1,27 +1,25 @@
 .category {
-    padding-top: calc(167px + (313 - 167) * ((100vw - 375px) / (1920 - 375)));
-    padding-bottom: calc(80px + (115 - 80) * ((100vw - 375px) / (1920 - 375)));
-    background: $background-site-product;
+    padding-top: 313px;
+    padding-bottom: 115px;
+    background: url('../images/dist/product-pages/pattern-big.svg') no-repeat bottom right, $background-site-product;
+    background-size: Min(Max(220px,28vw),516px) auto;
 
     &__list {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(auto, 1fr);
+        grid-template-rows: auto;
         gap: 23px 24px;
     }
 
     &__card {
         justify-self: center;
         align-self: stretch;
-
         width: 100%;
-        @include flex($dir: column, $ai: stretch, $jc: space-between);
-
+        @include flex($dir: column, $ai: stretch, $jc: stretch);
         background: $background-product-card;
         border: $border-card;
         border-radius: $radius-card;
         overflow: hidden;
-
         cursor: pointer;
         transition: box-shadow $transition;
 
@@ -49,6 +47,8 @@
         @include flex($jc: flex-start);
         gap: 9px;
         padding: 30px 26px;
+        max-height: 290px;
+        width: 100%;
     }
 
     &__product-img {
@@ -60,12 +60,13 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
+            mix-blend-mode: multiply;
         }
     }
 
     &__product-slice {
         @include flex($dir: column);
-        gap: 45px;
+        gap: 46px;
         position: relative;
     }
 
@@ -75,34 +76,22 @@
         overflow: hidden;
 
         &_big {
-            width: 115px;
-            height: 115px;
-            border: 2px solid $textcolor-light;
+            width: 123px;
+            height: 123px;
+            border: 3px solid $textcolor-light;
             box-shadow: 0px 0px 0px 2px $background-block-1;
         }
 
         &_small {
             width: 60px;
             height: 60px;
-            position: relative;
-            z-index: 0;
-
-            &::before {
-                position: absolute;
-                content: '';
-                top: calc(50% - 4px);
-                left: calc(50% - 4px);
-                width: 8px;
-                height: 8px;
-                border-radius: 50%;
-                background: $background-block-1;
-            }
         }
 
         & img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            mix-blend-mode: multiply;
         }
     }
 
@@ -114,21 +103,38 @@
         width: 2px;
         height: 69px;
         background: $background-block-1;
+
+        &::before {
+            position: absolute;
+            content: '';
+            bottom: -4px;
+            left: -3px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: $background-block-1;
+        }
+    }
+
+    &__bg {       
+        @include flex($dir: column, $ai: stretch, $jc: space-between);
+        background: $background-product-info;
+        border-radius: $radius-card $radius-card 0 0;
+        height: 100%;
     }
 
     &__description {
         background: $background-product-info;
         border-radius: $radius-card $radius-card 0 0;
-        padding: 35px 30px 14px;
+        padding: 26px 34px 11px;
     }
 
     &__name {
-        font-family: $userfont2;
-        font-size: calc(18px + (20 - 18) * ((100vw - 375px) / (1920 - 375)));
+        font-size: 20px;
         color: $textcolor-dark;
         font-weight: 600;
         line-height: 110%;
-        padding-bottom: 20px;
+        padding-bottom: 17px;
     }
 
     &__options {
@@ -138,7 +144,7 @@
 
     &__left-list {
         @include flex($dir:column, $jc: flex-start, $ai: stretch);
-        gap: 15px;
+        gap: 12px;
     }
 
     &__left-item {
@@ -154,7 +160,7 @@
 
     &__right-list {
         @include flex($dir:column, $jc: flex-start, $ai: stretch);
-        gap: 12px;
+        gap: 11px;
     }
 
     &__right-item {
@@ -174,14 +180,13 @@
         font-size: 16px;
         line-height: 110%;
         color: $textcolor-dark-gray;
-        word-break: word-break;
     }
 
     &__button {
         position: relative;
         @include flex($jc: flex-end);
         background: $background-product-info;
-        padding: 10px 15px 15px;
+        padding: 0px 15px 16px;
     }
 
     &__btn-text {

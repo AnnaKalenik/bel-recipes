@@ -1,0 +1,138 @@
+.fund {
+
+    &__container {
+        margin: 300px auto 115px;
+        @include container($content-width: rem(1800), $container-offset: rem(35));  
+    }
+
+    &__block {
+        min-height: 570px;
+        height: 100%;
+
+        display: grid;
+        grid-template-columns: 0.89fr 1.11fr;
+        grid-template-rows: auto;
+        gap: Min(Max(25px,5.5vw),72px);
+
+        background: $background-block-3;
+        border-radius: $radius-block;
+    }
+
+    &__img-wrap {
+        position: relative;
+        padding: 80px 0 0 178px;
+    }
+
+    &__logo {
+        max-width: 463px;
+        width: 100%;
+        height: auto;
+    }
+
+    &__img {
+        position: absolute;
+        bottom: -115px;
+        left: 178px;
+        z-index: 0;
+
+        max-width: 587px;
+        width: 100%;
+        height: auto;
+    }
+
+    &__content {
+        position: relative;
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        align-self: start;
+
+        @include flex($dir: column, $jc: flex-start, $ai: flex-start);
+
+        width: 100%;
+        height: 100%;
+        padding: 68px 178px 76px 0;
+    }
+
+    &__title {
+        font-family: $userfont1;
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 100%;
+        margin-bottom: Min(Max(25px,5vw),33px);
+        margin-left: -3px;
+    }
+
+    &__wrap {
+        @include flex($dir: column, $ai: flex-start);
+        gap: Min(Max(18px,2.5vw),20px);
+    }
+
+    &__top {
+        @include flex($dir: column, $ai: flex-start);
+        gap: Min(Max(8px,1.5vw),9px);
+    }
+
+    &__resources {
+        @include flex($dir: column, $ai: flex-start);
+        font-family: $userfont2;
+        color: $accent4;
+    }
+
+    &__text1 {
+        font-size: 24px;
+        text-transform: uppercase;
+        line-height: 110%;
+    }
+
+    &__sum {
+        font-size: 46px;
+        line-height: 110%;
+    }
+
+    &__info {
+        @include flex($dir: column, $ai: flex-start);
+        font-family: $userfont2;
+        line-height: 110%;
+    }
+
+    &__text2 {
+        font-family: $userfont1;
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 110%;
+        margin-bottom: Min(Max(2px,1.5vw),6px);
+    }
+
+    &__item {
+        font-family: $userfont2;
+        font-size: 18px;
+        line-height: 140%;
+        font-weight: 600;
+
+        & span {
+            font-weight: 700;
+        }
+    }
+
+    &__paragraph {
+        font-family: $userfont2;
+        font-size: 16px;
+        line-height: 120%;
+    }
+
+    &__promotion {
+        @include flex($dir: column, $ai: flex-start);
+        font-size: 14px;
+        font-family: $userfont2;
+        color: $accent4;
+        line-height: 120%;
+        margin-top: 4px;
+    }
+
+    &__period {
+        font-weight: 600;
+        line-height: 120%;
+    }
+}
+
+@import '_media-fund';

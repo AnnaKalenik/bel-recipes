@@ -1,60 +1,92 @@
 .categories {
-    padding-top: calc(167px + (313 - 167) * ((100vw - 375px) / (1920 - 375)));
-    padding-bottom: calc(80px + (120 - 80) * ((100vw - 375px) / (1920 - 375)));
-    background: $background-site-product;
+    padding-top: 313px;
+    padding-bottom: 120px;
+    background: url('../images/dist/product-pages/pattern-big.svg') no-repeat bottom right, $background-site-product;
+    background-size: Min(Max(220px,50vw),516px) auto;
 
     &__list {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        gap: 70px 29px;
+        grid-auto-rows: 1fr;
+        gap: 78px 53px;
     }
 
     &__item {
-        justify-self: center;
-        align-self: stretch;
-        @include flex($dir: column, $ai: stretch, $jc: space-between);
-        max-width: 328px;
+        @include flex($dir: column, $ai: stretch, $jc: stretch);
         width: 100%;
-        // min-height: 328px;
-        border: $border-card-hover transparent;
-        border-radius: 30px;
-        overflow: hidden;
+        height: 100%;
+        border-radius: $radius-card;
         cursor: pointer;
-        transition: border $transition, max-width $transition;
+        position: relative;
 
-        &:hover {
-            position: relative;
-            border: $border-card-hover;
-            max-width: 332px;
+        &::before {
+            position: absolute;
+            z-index: 0;
+            content: '';
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            border-radius: $radius-card;
+            background: $background-product-card;
+            transition: box-shadow $transition, width $transition, height $transition;
         }
 
-        &:hover .categories__name {
-            padding: 25px 27px;
+        &:hover::before {
+            width: calc(100% + 8px);
+            height: calc(100% + 8px);
+            box-shadow: 0px 0px 0px 4px #E0ECE9;
+        }
+
+        &:hover .categories__wrap::before {
+            width: calc(100% + 8px);
+            height: calc(100% + 8px);
+        }
+
+        &:hover .categories__wrap::after {
+            top: -4px;
+            left: -4px;
         }
     }
 
     &__link {
-        background: $background-product-card;
+        @include flex($dir: column, $ai: stretch, $jc: flex-start);
+        border-radius: $radius-card;
         height: 100%;
+        width: 100%;
     }
 
     &__wrap {
         position: relative;
         @include flex;
         height: 280px;
-        background: $background-product-img;
-        border-radius: 0 0 $radius-card $radius-card;
+        border-radius: $radius-card;
 
-        &:before {
+        &::before {
             position: absolute;
             z-index: 0;
+            content: '';
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 280px;
+            background: $background-product-img;
+            border-radius: $radius-card;
+            transition: width $transition, height $transition;
+        }
+
+        &::after {
+            position: absolute;
+            z-index: 1;
             content: '';
             top: 0;
             left: 0;
             width: 80px;
             height: 80px;
-            background: url('../images/dist/product-page/pattern.svg') no-repeat center / contain
+            background: url('../images/dist/product-page/pattern.svg') no-repeat center / contain;
+            transition: top $transition, left $transition;
         }
     }
 
@@ -62,19 +94,25 @@
         width: 100%;
         height: 100%;
         object-fit: contain;
-        position: relative;
+        // mix-blend-mode: multiply;
+        // background-color: #fff;
+        border-radius: $radius-card;
         z-index: 1;
+        padding: 37px;
+    }
+
+    &__name-wrap {
+        z-index: 1;
+        width: 100%;
+        padding: 25px;
     }
 
     &__name {
-        width: 100%;
-        font-size: calc(15px + (22 - 15) * ((100vw - 375px) / (1920 - 375)));
         font-family: $userfont2;
+        font-size: Min(Max(15px,2.5vw),22px);
         color: $textcolor-dark;
         font-weight: 600;
         line-height: 0.91;
-        padding: 25px;
-        transition: padding $transition;
     }
 }
 
