@@ -1,0 +1,21 @@
+@media (max-width: 1920px) {
+    .info {
+        padding-top: calc(297px + (313 - 297) * ((100vw - 375px) / (1920 - 375)));
+        padding-bottom: calc(0px + (25 - 0) * ((100vw - 375px) / (1920 - 375)));
+    }
+}
+
+@media (max-width: 1440px) {
+
+}
+
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 576px) {
+
+}

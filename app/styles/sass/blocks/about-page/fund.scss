@@ -1,7 +1,7 @@
 .fund {
 
     &__container {
-        margin: 300px auto 115px;
+        margin: 0 auto 115px;
         @include container($content-width: rem(1800), $container-offset: rem(35));  
     }
 

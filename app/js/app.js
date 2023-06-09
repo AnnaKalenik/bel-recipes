@@ -29,6 +29,50 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	toggleBurger();
+
+	// Tooltip
+	function toggleTooltip() {
+		let button = document.querySelector('.info__tooltip-button');
+		let textWindow = document.querySelector('.info__tooltip-window');
+
+		const toggle = () => {
+			button.classList.toggle('info__tooltip-button_active');
+			textWindow.classList.toggle('info__tooltip-window_active');
+		}
+		  
+		if (button) {
+			button.addEventListener('click', (e) => {
+				e.stopPropagation();
+				toggle();
+			});
+
+			document.addEventListener('click', (e) => {
+				let target = e.target;
+				let its_textBlock = target == textWindow || textWindow.contains(target);
+				let textBlock_is_active = textWindow.classList.contains('info__tooltip-window_active');
+				
+				if (!its_textBlock && textBlock_is_active) {
+					toggle();
+				}
+			})
+		}
+	}
+
+	toggleTooltip();
+
+	function openSecretIngredient() {
+		let button = document.querySelector('.info__ingredient');
+		let ingredientWindow = document.querySelector('.info__ingredient-wrap_red');
+
+		if (button) {
+
+			button.addEventListener('click', () => {
+				ingredientWindow.classList.add('active');
+			});
+		}
+	}
+	
+	openSecretIngredient();
 })
 
 
