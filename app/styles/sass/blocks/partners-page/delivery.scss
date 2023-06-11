@@ -1,0 +1,64 @@
+.delivery {
+    padding-top: 96px;
+    padding-bottom: 60px;
+    background: url('../images/dist/partners-page/delivery-pattern.svg') no-repeat top center;
+    background-size: Min(Max(50px,10vw),83px) auto;
+
+    &__container {
+        @include flex($dir: column);
+    }
+
+    &__title {
+        position: relative;
+        display: inline-flex;
+
+        font-family: $userfont1;
+        font-size: 64px;
+        line-height: 100%;
+        font-weight: 400;
+        color: $textcolor-dark;
+
+        padding-left: 32px;
+        padding-right: 32px;
+
+        &::before,
+        &::after {
+            position: absolute;
+            content: '';
+            top: calc(58%);
+            width: 15px;
+            height: 15px;
+            background: $accent1;
+        }
+
+        &::before {
+            left: 0;
+        }
+
+        &::after {
+            right: 0;
+        }
+    }
+
+    &__image {
+        margin-top: -75px;
+        width: 100%;
+        height: auto;
+    }
+
+    &__gallery {
+        display: none;
+    }
+
+    &__slide {
+        width: 100%;
+        height: auto;
+    }
+
+    &__slid-img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@import '_media-delivery';

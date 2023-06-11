@@ -46,7 +46,7 @@
         position: relative;
     }
 
-    &__btn-look {
+    &__look {
         position: absolute;
         bottom: -55px;
         left: -98px;
@@ -64,7 +64,6 @@
             width: 102px;
             height: 94px;
             background: url('../images/dist/main-page/hero-heart.svg') no-repeat center / contain;
-            border-radius: 1px; 
             z-index: 0;
         }
     }

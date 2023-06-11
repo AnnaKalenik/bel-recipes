@@ -45,6 +45,7 @@ $radius-card: 20px;
 $radius-card-big: 30px;
 $radius-window-info: 15px;
 $radius-window-info2: 35px;
+$radius-advantages: 35px;
 
 $shadow-btn: 0px 6px 12px rgba(198, 32, 44, 0.3);
 $shadow-search: 4px 4px 10px rgba(42, 42, 42, 0.15);
@@ -263,7 +264,7 @@ html {
 	}
 }
 
-.btn-look {
+.look {
 	width: 230px;
 	@include flex($jc: flex-start);
 	gap: 8px;
@@ -276,7 +277,6 @@ html {
 
 	border-bottom: 2px solid $accent1;
 	padding-bottom: 8px;
-	cursor: pointer;
 	transform: rotate(90deg);
 
 	&__arrow {

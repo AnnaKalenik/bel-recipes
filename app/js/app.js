@@ -73,8 +73,47 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 	
 	openSecretIngredient();
-})
 
+	const advantagesSlider = new Swiper('.advantages__gallery', {
+		slidesPerView: "auto",
+		loop: false,
+		spaceBetween: 15,
+		grabCursor: true,
+		allowTouchMove: true,
+	
+		breakpoints: {
+			577: {
+				grabCursor: false,
+				allowTouchMove: false,
+				spaceBetween: 0,
+			},
+		},
+
+		pagination: {
+			el: '.swiper-pagination',
+	  	},
+	});
+
+	const deliverySlider = new Swiper('.delivery__gallery', {
+		slidesPerView: "auto",
+		loop: false,
+		spaceBetween: 0,
+		grabCursor: true,
+		allowTouchMove: true,
+	
+		// breakpoints: {
+		// 	577: {
+		// 		grabCursor: false,
+		// 		allowTouchMove: false,
+		// 		spaceBetween: 0,
+		// 	},
+		// },
+
+		// navigation: {
+		// 	el: '.swiper-pagination',
+	  	// },
+	});
+})
 
 
 // document.addEventListener('DOMContentLoaded', () => {
