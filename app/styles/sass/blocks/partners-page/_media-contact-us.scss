@@ -1,0 +1,113 @@
+@media (max-width: 1920px) {
+    .contact {
+        &__title {
+            font-size: calc(54px + (100 - 54) * ((100vw - 375px) / (1920 - 375)));
+        }
+
+        &__bottom-part {
+            font-size: calc(36px + (64 - 36) * ((100vw - 375px) / (1920 - 375)));
+        }    
+    }
+}
+
+@media (max-width: 1440px) {
+    .contact {
+        &__title {
+            padding: 68px 0 0 76px;
+
+            &::after {
+                left: 68px;
+            }
+        }
+
+        &__left-wrap {
+            padding: 0 0 0 76px;
+        }
+
+        &__img {
+            left: 140px;
+        }
+
+        &__right-wrap {
+            padding: 68px 80px 76px 0;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .contact {
+        &__container {
+            margin: Min(Max(40px,10.5vw),60px) auto 80px;
+        }
+
+        &__block {   
+            border-radius: 34px;
+            padding: Min(Max(10px,3.5vw), 80px) Min(Max(20px,5.5vw), 80px) 0px;
+        }
+
+        &__title {
+            width: 100%;
+            padding: 0;
+            margin-bottom: 50px;
+
+            &::after {
+                left: auto;
+                right: -60%;
+                bottom: 0px;
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        &__wrap {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            gap: 51px;
+        }
+
+        &__left-wrap {
+            position: static;
+            @include flex($dir: column);
+            padding: 0;
+        }
+
+        &__img {  
+            position: static;
+            margin-bottom: -85px;
+        }
+
+        &__right-wrap {
+            grid-column: 1 / 1;
+            grid-row: 1 / 1;
+            padding: 0;
+            margin-top: 0;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .contact {
+        &__container {
+            padding: 0 15px;
+        }
+
+        &__title {
+            &::after {
+                right: -100%;
+                bottom: -40px;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .contact {
+        &__title {
+            &::after {
+                right: -120%;
+                bottom: -33px;
+            }
+        }
+    }
+}

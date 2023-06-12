@@ -33,7 +33,7 @@ $accent2: #5E8D66;
 $accent3: #72D0CA;
 $accent4: #79378A;
 
-$border-form: 1.5px solid #D9D9D9;
+$border-form: 1.5px solid #D7DCD6;
 $border-card: 1px solid #E0ECE9;
 $border-card-hover: 4px solid #E0ECE9;
 
@@ -157,22 +157,7 @@ html {
 .title-h2 {
 	font-family: $userfont1;
 	font-weight: 700;
-	// @include font($sz: 126px, $lh: 176px, $wt: 700);
 }
-
-// .title-h3 {
-// 	@include font($sz: Min(Max(24px,5vw),32px), $lh: 120%, $wt: 500);
-// 	margin-bottom: Min(Max(15px,2.5vw),40px);
-// }
-
-// .title-h4 {
-// 	@include font($sz: rem(24), $lh: 120%, $wt: 500);
-// }
-
-// .subtitle {
-// 	@include font($sz: Min(Max(14px,3.5vw),18px), $lh: 140%, $wt: 500);
-// 	margin-bottom: Min(Max(10px,2.5vw),20px);
-// }
 
 .text {
 	@include font($sz: Min(Max(12px,2.5vw),18px), $lh: 140%, $wt: 400);
@@ -231,25 +216,6 @@ html {
 		&:hover .btn__arrow {
 			width: 30px;
 		}
-		
-		// &_animaited {
-		// 	position: relative;
-		// 	animation: moveLeft 0.3s linear normal running both;
-	
-		// 	&:hover {
-		// 		animation: moveRight 0.3s linear normal running both;
-	
-		// 		@keyframes moveRight {
-		// 			0% {left: 0;}
-		// 			100% {left: 5px;}
-		// 		}
-		// 	}
-	
-		// 	@keyframes moveLeft {
-		// 		0% {left: 5px;}
-		// 		100% {left: 0px;}
-		// 	}
-		// }
 	}
 
 	@media (max-width: 576px) {

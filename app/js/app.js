@@ -74,6 +74,33 @@ document.addEventListener('DOMContentLoaded', () => {
 	
 	openSecretIngredient();
 
+	function form() {
+		const form = document.querySelector('.form-contact');
+		const allInputs = form.querySelectorAll('.form__input');
+
+		if (form) {
+			//убираем label вверх при фокусе ------------------------------------------------
+			allInputs.forEach(input => input.onfocus = function() {
+				const id = this.id;
+				const label = form.querySelector(`[for=${id}]`);
+		
+				label.classList.add('form__label_active');
+			});
+		
+			//добавляем label обратно при переключении фокуса, если инпут пустой ----------------
+			allInputs.forEach(input => input.addEventListener('focusout', function () {
+				if (!this.value) {
+					const id = this.id;
+					const label = form.querySelector(`[for=${id}]`);
+		
+					label.classList.remove('form__label_active');
+				} 
+			}));
+		}
+	}
+
+	form();
+
 	const advantagesSlider = new Swiper('.advantages__gallery', {
 		slidesPerView: "auto",
 		loop: false,
@@ -98,20 +125,14 @@ document.addEventListener('DOMContentLoaded', () => {
 		slidesPerView: "auto",
 		loop: false,
 		spaceBetween: 0,
+		initialSlide: 1,
 		grabCursor: true,
 		allowTouchMove: true,
 	
-		// breakpoints: {
-		// 	577: {
-		// 		grabCursor: false,
-		// 		allowTouchMove: false,
-		// 		spaceBetween: 0,
-		// 	},
-		// },
-
-		// navigation: {
-		// 	el: '.swiper-pagination',
-	  	// },
+		navigation: {
+			nextEl: '.swiper-button.next',
+			prevEl: '.swiper-button.prev',
+		},
 	});
 })
 

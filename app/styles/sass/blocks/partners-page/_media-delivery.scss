@@ -17,12 +17,6 @@
     }
 }
 
-@media (max-width: 1200px) {
-    .delivery {
-
-    }
-}
-
 @media (max-width: 991px) {
     .delivery {
         &__container {
@@ -37,21 +31,8 @@
             display: none;
         }
 
-        &__gallery {
+        &__gallery-wrap {
             display: block;
         }
-
-    }
-}
-
-@media (max-width: 768px) {
-    .delivery {
-
-    }
-}
-
-@media (max-width: 576px) {
-    .delivery {
-
     }
 }

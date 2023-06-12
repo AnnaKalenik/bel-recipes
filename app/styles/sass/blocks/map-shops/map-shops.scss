@@ -1,0 +1,203 @@
+.shops {
+    padding-top: 146px;
+    padding-bottom: 100px;
+    background: url('../images/dist/partners-page/advantages-pattern.svg') no-repeat top left;
+    background-size: Min(Max(220px,50vw),579px) auto;
+
+    &__wrap {
+        @include flex($ai: flex-start, $jc: space-between);
+        gap: 40px;
+        margin-bottom: 52px;
+    }
+
+    &__title {
+        position: relative;
+        @include flex($dir: column, $ai: flex-start, $jc: space-between);
+
+        font-family: $userfont1;
+        font-size: 100px;
+        line-height: 110%;
+        font-weight: 400;
+        color: $textcolor-dark;
+        
+        margin-top: 16px;
+        padding-left: 52px;
+
+        &::before {
+            position: absolute;
+            content: '';
+            top: calc(35%);
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background: $accent1;
+        }
+    }
+
+    &__bottom-part {
+        font-size: 64px;
+        margin-top: -25px;
+        margin-left: 442px;
+    }
+
+	&__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 1fr;
+        gap: 30px 27px;
+	}
+
+	&__item {
+        @include flex($dir: column, $ai: flex-start, $jc: flex-start);
+        gap: 39px;
+        background: $background-product-card;
+        border-radius: $radius-advantages;
+        padding: 33px 35px 36px;
+	}
+
+    &__wrap-icon {
+        @include flex($ai: flex-start, $jc: flex-start);
+        width: 63px;
+        height: 52px;
+	}
+
+    &__icon {
+        width: auto;
+        height: 100%;
+	}
+
+    &__description {
+        font-family: $userfont2;
+        @include font($sz: 18px, $lh: 110%, $wt: 500);
+        color: $textcolor-dark-gray;
+	}
+}
+
+.price {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+
+    position: relative;
+    cursor: pointer;
+
+    &:hover .price__wrap::after {
+        width: 180px;
+        height: 180px;
+    }
+
+    &__wrap {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        @include flex($dir: column);
+        gap: 4px;
+
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+        padding: Min(Max(15px,5vw),24px);
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            box-sizing: border-box;
+        }
+
+        &::before {
+            width: 230px;
+            height: 230px;
+            border: 1px solid $accent3;
+
+            animation: roundPuls 2.2s linear 0s infinite normal running;
+
+            @keyframes roundPuls {
+                0% {
+                    width: 230px;
+                    height: 230px;
+                }
+                       
+                40% {
+                    width: 200px;
+                    height: 200px;
+                }
+
+                45% {
+                    width: 200px;
+                    height: 200px;
+                }
+            
+                95% {
+                    width: 230px;
+                    height: 230px;
+                }
+            }
+        }
+
+        &::after {
+            width: 170px;
+            height: 170px;
+            background: $accent3;
+            transition: width $transition, height $transition;
+        }
+    }
+
+    &__wrap-icon {
+        width: Min(Max(20px,3vw),27px);
+        height: Min(Max(27px,3vw),37px);
+        z-index: 1;
+    }
+
+    &__icon {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    &__text-big,
+    &__text-small {
+        font-family: $userfont1;
+        color: $textcolor-light;
+        z-index: 1;
+    }
+
+    &__text-big {
+        position: relative;
+        font-size: 24px;
+        line-height: 90%;
+        font-weight: 700;
+
+        &::before,
+        &::after {
+            position: absolute;
+            content: '';
+            top: calc(55%);
+            width: 5px;
+            height: 5px;
+            background: $textcolor-light;
+        }
+
+        &::before {
+            left: -14px;
+        }
+
+        &::after {
+            right: -14px;
+        }
+    }
+
+    &__text-small {
+        font-size: 20px;
+        line-height: 90%;
+        font-weight: 400;
+    }
+}
+
+@import '_media-map-shops';
