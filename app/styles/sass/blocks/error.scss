@@ -10,7 +10,7 @@
         padding: 100px 5.3333% 100px;
     }
 
-    &__title-3 {
+    &__title-1 {
         @include font($sz: Min(Max(90px,10vw),140px), $lh: 120%, $wt: 700);  
         text-align: center;
     }
@@ -18,5 +18,33 @@
     &__text {
         @include font($sz: Min(Max(22px,2.5vw),32px), $lh: 140%);
         text-align: center;
+
+        &_weight {
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+    }
+
+    &__btn-wrap {
+        @include flex($jc: flex-start);
+        max-width: 260px;
+        margin-left: calc(305px - 234px);
+        width: 100%;
+    }
+}
+
+@media (max-width: 1920px) {
+    .error {
+        margin-top: calc(100px + (200 - 100) * ((100vw - 375px) / (1920 - 375)));
+    }
+}
+
+@media (max-width: 768px) {
+    .error {
+        &__btn-wrap {
+            justify-content: center;
+            margin-left: 0;
+            max-width: auto;
+        }
     }
 }

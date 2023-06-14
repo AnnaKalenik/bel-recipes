@@ -9,6 +9,7 @@
 	<title>Ошибка 500 Белорусские рецепты</title>
 	<meta name="description" content="Ошибка 500 описание">
 	<link rel="icon" href="./images/favicon.png">
+	<link rel="stylesheet" href="./css/hystmodal.min.css"> 
 	<link rel="stylesheet" href="./css/app.min.css">
 </head>
 <body class="page">
@@ -116,14 +117,18 @@
                 <div class="container error__container">
 
                     <div class="error__content">
-                        <h3 class="error__title-3">500</h3>
-                        <p class="error__text">Внутренняя ошибка сервера!</p>
+                        <h1 class="error__title-1">500</h1>
+                        <p class="error__text error__text_weight">Внутренняя ошибка сервера!</p>
                         <p class="error__text">При обработке запроса произошла ошибка на сервере. 
                             Попробуйте повторить ваши действия снова.
                         </p>
                     </div>
-                    <a class="btn btn_black" href="./">На главную</a>    
- 
+                    <div class="error__btn-wrap">
+                        <a href="./" class="btn error__btn">
+                            <span>На главную</span> 
+                            <span class="btn__arrow"></span>
+                        </a>
+                    </div>
                 </div>
             </section>
          
@@ -194,57 +199,57 @@
 			</div>
 		</footer>
 
-		<div class="hystmodal" id="myModal" aria-hidden="true">
-			<div class="hystmodal__wrap">
-				<div class="hystmodal__window" role="dialog" aria-modal="true">
-					<button data-hystclose class="hystmodal__close">Закрыть</button>
-					<div class="form">
-						<form action="#" method="POST" class="form__body form-contact">      
-							<div class="form__fields">
-								<div class="form__item">
-									<label for="formText2" class="form__label">
-										ФИО<span class="form__label-star">*</span>
-									</label>
-									<input type="text" id="formText2" class="form__input" name="name" required>
-								</div>
-								<div class="form__item">
-									<label for="formEmail2" class="form__label">
-										E-mail<span class="form__label-star">*</span>
-									</label>
-									<input type="email" id="formEmail2" class="form__input" name="email" required>
-								</div>
-								<div class="form__item">
-									<label for="formTel2" class="form__label">Номер телефона</label>
-									<input type="tel" id="formTel2" class="form__input" name="phone">
-								</div>
-							</div> 
-							<div class="form__item form__item_big">
-								<label for="formComment2" class="form__label form__label_big">Сообщение</label>
-								<textarea class="form__input form__input_big" id="formComment2" name="comments"></textarea>
-							</div>
-							<div class="form__btn-wrap">
-								<div class="form__politics">
-									<div class="form__checkbox checkbox">
-										<input type="checkbox" id="formAgreement" class="checkbox__input" name="agreement" checked>
-										<label for="formAgreement" class="checkbox__label"></label>
-									</div>
-									<a class="form__link" href="#">Соглашаюсь на обработку персональных данных</a>
-								</div>
+		            <div class="hystmodal" id="myModal" aria-hidden="true">
+                <div class="hystmodal__wrap">
+                    <div class="hystmodal__window hystmodal__window_form" role="dialog" aria-modal="true">
+                        <button data-hystclose class="hystmodal__close">Закрыть</button>
+                        <div class="form form_modal">
+                            <form action="#" method="POST" class="form__body form-contact">      
+                                <div class="form__fields form__fields_modal">
+                                    <div class="form__item">
+                                        <label for="formText2" class="form__label">
+                                            ФИО<span class="form__label-star">*</span>
+                                        </label>
+                                        <input type="text" id="formText2" class="form__input" name="name" required>
+                                    </div>
+                                    <div class="form__item">
+                                        <label for="formEmail2" class="form__label">
+                                            E-mail<span class="form__label-star">*</span>
+                                        </label>
+                                        <input type="email" id="formEmail2" class="form__input" name="email" required>
+                                    </div>
+                                    <div class="form__item">
+                                        <label for="formTel2" class="form__label">Номер телефона</label>
+                                        <input type="tel" id="formTel2" class="form__input" name="phone">
+                                    </div>
+                                </div> 
+                                <div class="form__item form__item_big">
+                                    <label for="formComment2" class="form__label form__label_big">Сообщение</label>
+                                    <textarea class="form__input form__input_big" id="formComment2" name="comments"></textarea>
+                                </div>
+                                <div class="form__btn-wrap form__btn-wrap_modal">
+                                    <div class="form__politics">
+                                        <div class="form__checkbox checkbox">
+                                            <input type="checkbox" id="formAgreement" class="checkbox__input" name="agreement" checked>
+                                            <label for="formAgreement" class="checkbox__label"></label>
+                                        </div>
+                                        <a class="form__link form__link_modal" href="#">Соглашаюсь на обработку персональных данных</a>
+                                    </div>
+                                
+                                    <button type="submit" class="btn form__button form__button_modal">
+                                        Отправить
+                                        <span class="btn__arrow"></span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-								<button type="submit" class="btn form__button">
-									Отправить
-									<span class="btn__arrow"></span>
-								</button>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
 
 	</div>
 
-	<link rel="stylesheet" href="./js/hystModal/hystmodal.min.css"> 
 	<script src="js/hystModal/hystmodal.min.js"></script>
 
 	<script src="js/swiper-bundle.min.js"></script>

@@ -1,0 +1,11 @@
+.hystmodal {
+    &__window {
+        &_form {
+            border-radius: $radius-card;
+            max-width: 460px;
+            width: 100%;
+        }
+    }
+}
+
+// @import '_media-about';

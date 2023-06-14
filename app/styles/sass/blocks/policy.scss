@@ -1,0 +1,65 @@
+.policy {
+    height: 100%;
+    margin-top: Min(Max(150px,28vw),320px);
+    margin-bottom: Min(Max(60px,28vw),100px);
+
+    & h1 {
+        @include font($sz: Min(Max(28px,5.5vw),50px), $lh: 120%, $wt: 700);  
+        margin-top: 60px;
+        margin-bottom: 50px;
+    }
+
+    & h2 {
+        @include font($sz: Min(Max(24px,5.5vw),42px), $lh: 120%, $wt: 700);  
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+
+    & h3 {
+        @include font($sz: Min(Max(22px,5vw),38px), $lh: 120%, $wt: 700);  
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    & h4 {
+        @include font($sz: Min(Max(20px,5vw),36px), $lh: 120%, $wt: 700);  
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    & h5,
+    & h6 {
+        @include font($sz: Min(Max(18px,5vw),34px), $lh: 120%, $wt: 700);  
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    & p {
+        @include font($sz: Min(Max(16px,3vw),18px), $lh: 140%, $wt: 400);  
+        margin-bottom: 15px;
+    }
+
+    & ul,
+    & ol {
+        @include font($sz: Min(Max(16px,3vw),18px), $lh: 140%, $wt: 400);  
+        padding-left: 20px;
+        margin: 10px 0;
+    }
+
+    & ul li {
+        list-style-type: disc;
+        padding-left: 5px;
+    }
+
+    & ol li {
+        list-style-type: decimal;
+        padding-left: 5px;
+    }
+
+    & a {
+        font-weight: 700;
+        color: $textcolor-dark-gray;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}

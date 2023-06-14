@@ -123,32 +123,32 @@ document.addEventListener('DOMContentLoaded', () => {
 	
 	openSecretIngredient();
 
-	// function form() {
-	// 	const form = document.querySelector('.form-contact');
-	// 	const allInputs = form.querySelectorAll('.form__input');
+	
+	function form() {
+		const form = document.querySelector('.form-contact');
+		const allInputs = form.querySelectorAll('.form__input');
 
-	// 	if (form) {
-	// 		//убираем label вверх при фокусе ------------------------------------------------
-	// 		allInputs.forEach(input => input.onfocus = function() {
-	// 			const id = this.id;
-	// 			const label = form.querySelector(`[for=${id}]`);
+		if (form) {
+			//убираем label вверх при фокусе ------------------------------------------------
+			allInputs.forEach(input => input.onfocus = function() {
+				const id = this.id;
+				const label = form.querySelector(`[for=${id}]`);
 		
-	// 			label.classList.add('form__label_active');
-	// 		});
+				label.classList.add('form__label_active');
+			});
 		
-	// 		//добавляем label обратно при переключении фокуса, если инпут пустой ----------------
-	// 		allInputs.forEach(input => input.addEventListener('focusout', function () {
-	// 			if (!this.value) {
-	// 				const id = this.id;
-	// 				const label = form.querySelector(`[for=${id}]`);
+			//добавляем label обратно при переключении фокуса, если инпут пустой ----------------
+			allInputs.forEach(input => input.addEventListener('focusout', function () {
+				if (!this.value) {
+					const id = this.id;
+					const label = form.querySelector(`[for=${id}]`);
 		
-	// 				label.classList.remove('form__label_active');
-	// 			} 
-	// 		}));
-	// 	} else return;
-	// }
-
-	// form();
+					label.classList.remove('form__label_active');
+				} 
+			}));
+		} else return;
+	}
+	form();
 
 
 	//Подключение Яндекс-карты

@@ -6,11 +6,20 @@
 .form {
     width: 100%;
 
+    &_modal {
+        padding: 42px 40px 50px;
+    }
+
     &__fields {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
         gap: 43px 50px;
+
+        &_modal {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;    
+        }
     }
 
     &__item {
@@ -37,6 +46,7 @@
         display: block;
         padding-right: 15px;
         transition: opacity $transition;
+        pointer-events: none;
 
         &_active {
            opacity: 0;
@@ -70,6 +80,10 @@
         @include flex($jc: space-between);
         gap: 20px;
         margin-top: 25px;
+
+        &_modal {
+            flex-direction: column;
+        }
     }
 
     &__politics {
@@ -81,10 +95,21 @@
         font-family: $userfont2;
         @include font($sz: 16px, $lh: 140%, $wt: 400);
         color: $textcolor-dark-gray;
-        transition: color $transition;
+
+        &_modal {
+            font-size: 14px;
+            line-height: 120px;
+        }
 
         &:hover {
             color: $textcolor-light-gray;
+            text-decoration: underline;
+        }
+    }
+
+    &__button {
+        &_modal {
+            width: 100%;
         }
     }
 }
