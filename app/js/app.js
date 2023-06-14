@@ -1,4 +1,51 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+	function stickyHeader() {
+		const header = document.querySelector('.header');
+		let scrollPrev = 0;
+
+		if (window.matchMedia("(min-width: 1201px)").matches) {
+			window.addEventListener('scroll', () => {
+				let scrolled = window.pageYOffset;
+
+				if (scrolled > 58 && scrolled > scrollPrev) {
+					header.classList.add('header_out');
+				} else {
+					header.classList.remove('header_out');
+					header.classList.add('header_full-screen');
+				}
+
+				if (scrolled < 58 ) {
+					header.classList.remove('header_out');
+					header.classList.remove('header_full-screen');
+				} 
+	
+				scrollPrev = scrolled;
+			})
+		}
+		
+		if (window.matchMedia("(max-width: 1200px)").matches) {
+			window.addEventListener('scroll', () => {
+				let scrolled = window.pageYOffset;
+
+				if (scrolled > 27 && scrolled > scrollPrev) {
+					header.classList.add('header_out');
+				} else {
+					header.classList.remove('header_out');
+					header.classList.add('header_full-screen');
+				}
+
+				if (scrolled < 27 ) {
+					header.classList.remove('header_out');
+					header.classList.remove('header_full-screen');
+				} 
+	
+				scrollPrev = scrolled;
+			})
+		}
+	}
+
+	stickyHeader();
 	
     function toggleSearch() {
 		const btn = document.querySelector('#btn-search');
@@ -15,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleSearch();
 
 	function toggleBurger() {
+		const body = document.querySelector('.page');
 		const nav = document.querySelector('.header__mobile');
 		const navLinks = document.querySelectorAll('.nav__link');
 		const burger = document.querySelector('.burger');
@@ -22,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		const toggleClasses = () => {
 			burger.classList.toggle('burger_open');
 			nav.classList.toggle('header__mobile_open');
+			body.classList.toggle('page_open');
 		}
 
 		burger.addEventListener('click', toggleClasses);
@@ -74,32 +123,77 @@ document.addEventListener('DOMContentLoaded', () => {
 	
 	openSecretIngredient();
 
-	function form() {
-		const form = document.querySelector('.form-contact');
-		const allInputs = form.querySelectorAll('.form__input');
+	// function form() {
+	// 	const form = document.querySelector('.form-contact');
+	// 	const allInputs = form.querySelectorAll('.form__input');
 
-		if (form) {
-			//убираем label вверх при фокусе ------------------------------------------------
-			allInputs.forEach(input => input.onfocus = function() {
-				const id = this.id;
-				const label = form.querySelector(`[for=${id}]`);
+	// 	if (form) {
+	// 		//убираем label вверх при фокусе ------------------------------------------------
+	// 		allInputs.forEach(input => input.onfocus = function() {
+	// 			const id = this.id;
+	// 			const label = form.querySelector(`[for=${id}]`);
 		
-				label.classList.add('form__label_active');
-			});
+	// 			label.classList.add('form__label_active');
+	// 		});
 		
-			//добавляем label обратно при переключении фокуса, если инпут пустой ----------------
-			allInputs.forEach(input => input.addEventListener('focusout', function () {
-				if (!this.value) {
-					const id = this.id;
-					const label = form.querySelector(`[for=${id}]`);
+	// 		//добавляем label обратно при переключении фокуса, если инпут пустой ----------------
+	// 		allInputs.forEach(input => input.addEventListener('focusout', function () {
+	// 			if (!this.value) {
+	// 				const id = this.id;
+	// 				const label = form.querySelector(`[for=${id}]`);
 		
-					label.classList.remove('form__label_active');
-				} 
-			}));
-		}
-	}
+	// 				label.classList.remove('form__label_active');
+	// 			} 
+	// 		}));
+	// 	} else return;
+	// }
 
-	form();
+	// form();
+
+
+	//Подключение Яндекс-карты
+	// let center = [55.76948021638985,38.04300669628907];
+	
+	// function init() {
+	//     let map = new ymaps.Map("map", {
+	//         center: center,
+	//         zoom: 7.5
+	//     });
+
+	// 	let placemark = new ymaps.Placemark(center, {
+	// 		balloonContent: `
+	
+	// 			<div class="balloon">
+	// 				<div class="balloon__address">г. Париж</div>
+	// 				<div class="balloon__contacts">
+	// 					<a href="tel:+7999999999">+7999999999</a>
+	// 				</div>
+	// 			</div>
+	
+	// 		`
+	// 	}, {
+	// 		iconLayout: 'default#image',
+	// 		iconImageHref: 'https://e7.pngegg.com/pngimages/869/689/png-clipart-the-national-computer-icons-bookmark-polyline-miscellaneous-heart.png',
+	// 		iconImageSize: [40, 40],
+	// 		iconImageOffset: [-19, -44]
+	// 	});
+
+	// 	map.controls.remove('geolocationControl'); // геолокацию
+	// 	map.controls.remove('searchControl'); // поиск
+	// 	map.controls.remove('trafficControl'); // контроль трафика
+	// 	map.controls.remove('typeSelector'); // тип
+	// 	map.controls.remove('fullscreenControl'); // кнопка перехода в полноэкранный режим
+	// 	map.controls.remove('zoomControl'); // контрол зуммирования
+	// 	map.controls.remove('rulerControl'); // контрол правил
+
+	// 	map.geoObjects.add(placemark);
+	// }
+
+	// ymaps.ready(init);
+
+	const myModal = new HystModal({
+		linkAttributeName: "data-hystmodal",
+	});
 
 	const advantagesSlider = new Swiper('.advantages__gallery', {
 		slidesPerView: "auto",

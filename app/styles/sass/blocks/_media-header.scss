@@ -10,6 +10,37 @@
     .header {
         top: 27px;
 
+        &_out {
+            transform: translateY(-300%);
+        }
+    
+        &_full-screen {
+            top: 0px;
+            background: $background-header;
+    
+            & .header__container {
+                padding: 0;
+                width: 100%;
+            }
+    
+            & .header__panel {
+                background: 0;
+            }
+    
+            & .header__logo {
+                position: relative;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                width: 52px;
+                height: 47px;
+                z-index: 2;
+            }
+
+            & .header__mobile {
+                top: 0;
+            }
+        }
+
         &__panel {
             grid-template-columns: auto auto;
             grid-template-rows: 1fr;

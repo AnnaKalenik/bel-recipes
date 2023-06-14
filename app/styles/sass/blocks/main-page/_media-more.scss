@@ -1,3 +1,19 @@
+@media (max-width: 1920px) {
+    .more {
+        &__block {
+            min-height: calc(480px + (550 - 480) * ((100vw - 375px) / (1920 - 375)));
+        }
+
+        &__content {
+            gap: calc(26px + (51 - 26) * ((100vw - 375px) / (1920 - 375)));
+        }
+    
+        &__title {
+            font-size: calc(28px + (64 - 28) * ((100vw - 375px) / (1920 - 375)));
+        }
+    }
+}
+
 @media (max-width: 1280px) {
     .more {
         &__img {  
@@ -19,7 +35,7 @@
         &__block {   
             display: grid;
             grid-template-columns: 1fr;
-            grid-template-rows: 1fr 1fr;
+            grid-template-rows: 308px 1fr;
             gap: 40px;
     
             background: $background-block-2;
@@ -47,6 +63,8 @@
 @media (max-width: 576px) {
     .more {
         &__block {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
             border-radius: 9.6px;
             gap: 16px;
         }   

@@ -1,5 +1,6 @@
 .error {
     height: 100%;
+    margin-top: 200px;
 
     &__container {
         @include flex($dir: column, $jc: space-between);

@@ -42,31 +42,31 @@
 .burger {
     display: none;
     position: relative;
-    width: 24px;
-    height: 17.5px;
+    width: 26px;
+    height: 18px;
     z-index: 2;
     cursor: pointer;
 
     &__line {
         position: absolute;
-        width: 24px;
-        height: 1.5px;
+        width: 26px;
+        height: 2px;
         border: none;
         background-color: $textcolor-dark;
         transition: transform $transition, transform-origin $transition;
 
         &_line1 {
-            top: 0px;
+            top: 0;
             left: 0;
         }
 
         &_line2 {
-            top: 7.25px;
+            top: 8px;
             left: 0;
         }
 
         &_line3 {
-            bottom: 0px;
+            bottom: 0;
             left: 0;
         }
     }

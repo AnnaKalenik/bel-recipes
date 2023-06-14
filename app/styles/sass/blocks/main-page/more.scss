@@ -6,7 +6,7 @@
     }
 
     &__block {
-        min-height: calc(480px + (550 - 480) * ((100vw - 375px) / (1920 - 375)));
+        min-height: 550px;
         height: 100%;
 
         display: grid;
@@ -39,7 +39,7 @@
         align-self: end;
 
         @include flex($dir: column, $jc: flex-end, $ai: flex-start);
-        gap: calc(26px + (51 - 26) * ((100vw - 375px) / (1920 - 375)));
+        gap: 51px;
 
         width: 100%;
         height: 100%;
@@ -48,7 +48,7 @@
 
     &__title {
         font-family: $userfont1;
-        font-size: calc(28px + (64 - 28) * ((100vw - 375px) / (1920 - 375)));
+        font-size: 64px;
         font-weight: 700;
         line-height: 110%;
     }

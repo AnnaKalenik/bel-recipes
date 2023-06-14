@@ -1,29 +1,44 @@
 .about {
-    position: relative;
-
     background: url('../images/dist/main-page/about-bg-left.webp'), url('../images/dist/main-page/about-bg-right.webp');
     background-repeat: no-repeat;
-    background-position: bottom 10px left, bottom 10px right;
+    background-position: bottom 100px left, bottom 100px right;
     background-size: auto;
 
-    &__line {
-        max-width: 1667px;
-        width: 100%;
+    &__container {
+        position: relative;
+        margin: 0 auto;
+        @include container($content-width: rem(1920), $container-offset: rem(0));  
+        padding: 112px 0 179px;
+
+        &::before {
+            position: absolute;
+            content: '';
+            top: 112.5px;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: $accent1;
+        }
     }
 
-    &__container {
-        margin: 95px auto;
-        @include container($content-width: rem(1800), $container-offset: rem(35));  
+    &__line-wrap {
+        max-width: 1441.5px;
+        width: 100%;
+        height: auto;
+    }
+
+    &__line-mob {
+        display: none;
     }
 
     &__title {
         position:absolute;
-        top: 51%;
-        left: 22%;
+        top: 46.8%;
+        left: 20.6%;
         font-family: $userfont1;
         font-weight: 400;
-        font-size: calc(44px + (126 - 44) * ((100vw - 375px) / (1920 - 375)));
-        line-height: calc(62px + (176 - 62) * ((100vw - 375px) / (1920 - 375)));
+        font-size: 180px;
+        line-height: 126px;
         color: $textcolor-dark;
         text-align: center;
         display: inline-block;
@@ -31,98 +46,272 @@
         &::before {
             position: absolute;
             content: '';
-            top: calc(60%);
-            left: calc(-16px + (-57 + 16) * ((100vw - 375px) / (1920 - 375)));
-            width: calc(7px + (20 - 7) * ((100vw - 375px) / (1920 - 375)));
-            height: calc(7px + (20 - 7) * ((100vw - 375px) / (1920 - 375)));
+            top: calc(64%);
+            left: -57px;
+            width: 20px;
+            height: 20px;
             background: $accent1;
         }
     }
 
-    &__name {
-        font-family: $userfont1;
-        font-size: 26px;
-        font-weight: 700;
-        fill: #2A2A2A;
+    &__item {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+
+        top: 63px;
+        left: 265px;
+        z-index: 2;
     }
 
-    &__description {
-        font-family: $userfont2;
-        font-size: 16px;
-        font-weight: 400;
-        fill: #2A2A2A;
-    }
-
-    &__point {
+    &__marker {
+        position: absolute;
+        z-index: 1;
+        width: 100px;
+        height: 100px;
+        background: #ffffff;
+        border-radius: 50%;
         cursor: pointer;
-    }
+        transition: box-shadow $transition;
 
-    &__circle-big {
-        filter: none;
-        transition: filter $transition;
+        &::after {
+            position: absolute;
+            z-index: 0;
+            content: '';
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); 
+            width: 60px;
+            height: 60px;
+            background: #ffffff;
+            border-radius: 50%;
+            box-shadow: 3.6px 3.6px 15px rgba(42, 42, 42, 0.15);
 
-        & .open {
-            filter: url('#filter-1');
+            transition: opacity $transition;
+            opacity: 1;
         }
-    }
 
-    &__circle-middle,
-    &__arrow {
-        opacity: 1;
-        transition: opacity $transition;
+        &:hover {
+            box-shadow: 4px 4px 20px rgba(42, 42, 42, 0.1);
+        }
 
-        & .open {
+        &:hover::after,
+        &:hover .about__icon::after {
             opacity: 0;
         }
+
+        &:hover .about__icon::before {
+            opacity: 1;
+        }
+
+        &:hover .about__window {
+            transform: scaleY(1);
+            transform: translateY(0);
+            opacity: 1;
+            z-index: 0;
+        }
+
+        &_1 {
+            top: 63px;
+            left: 265px;
+            z-index: 5;
+        }
+
+        &_2 {
+            top: 280px;
+            left: 690px;
+            z-index: 3;
+        }
+
+        &_3 {
+            top: 168px;
+            left: 1085px;
+            z-index: 4;
+        }
+
+        &_4 {
+            top: 444px;
+            left: 1380px;
+            z-index: 5;
+        }
+
+        &_5 {
+            top: 742px;
+            left: 1085px;
+            z-index: 1;
+        }
+
+        &_6 {
+            top: 923px;
+            left: 835px;
+            z-index: 0;
+        }
     }
 
-    &__cross {
-        opacity: 0;
-        transition: opacity $transition;
+    &__icon {
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); 
+        width: 30px;
+        height: 30px;
+        background: $accent1;
+        border-radius: 50%;
+        box-shadow: 0px 6px 12px rgba(198, 32, 44, 0.3);
 
-        & .open {
+        &::before {
+            position: absolute;
+            content: '';
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); 
+            width: 12px;
+            height: 12px;
+            background: url('../images/dist/main-page/about-marker-cross.svg') no-repeat center / contain;
+            transition: opacity $transition;
+            opacity: 0;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            top: 49%;
+            left: calc(52% - 21px);
+            width: 21px;
+            height: 21px;
+            background: url('../images/dist/main-page/about-marker-arrow.svg') no-repeat center / contain;
+            transition: opacity $transition;
             opacity: 1;
         }
     }
 
+    &__name {
+        position: absolute;
+        z-index: 0;
+        font-family: $userfont1;
+        font-size: 26px;
+        line-height: 110%;
+        font-weight: 700;
 
+        &_top {
+            top: -50px;
+            left: 50%;
+            transform: translate(-50%, 0); 
+        }
 
+        &_left-right {
+            top: 50%;
+            left: 125px;
+            transform: translate(0, -50%); 
+        }
 
+        &_bottom {
+            bottom: -48px;
+            left: 50%;
+            transform: translate(-50%, 0); 
+        }
 
-    // &__window {
-    //     position: absolute;
-    //     top: 40%;
-    //     left: 20%;
-    //     max-width: 30%;
-    //     border-radius: 15px;
-    //     overflow: hidden; 
-    //     display: flex;
-    //     flex-direction: column;
-    //     justify-content: stretch;
-    //     height: fit-content;
-    // }
+        &_min-width {
+            min-width: 150px;
+            width: 100%;
+        }
+    }
 
-    // &__top {
-    //     width: 100%;
-    //     height: 120px;
+    &__window {
+        min-height: 125px;
+        height: fit-content;
+        position: absolute;
+        top: -10px;
+        right: calc(50% + 12px);
 
-    //     & svg {
-    //         width: 100%;
-    //         height: 100%;
-    //     }
-    // }
+        display: grid;
+        grid-template-columns: 341px 20px;
+        grid-template-rows: 100px auto; 
+        border-radius: $radius-window-info;
+        overflow: hidden;
 
-    // &__bottom {
-    //     display: flex;
-    //     max-width: 100%;
-    //     background: rgba(213, 218, 211, 0.9);
-    // }
+        transition: transform $transition, opacity $transition;
+        transform: scaleY(0);
+        transform: translateY(-80%);
+        opacity: 0;
+        z-index: -10;
 
-    // &__description {
-    //     margin-top: -150px;
-    //     max-width: 361px;
-    //     padding: 29px 29px 34px 38px;
-    // }
+        &_right {
+            right: auto;
+            left: calc(50% + 12px);
+            grid-template-columns: 20px 341px;
+            grid-template-rows: 100px auto; 
+        }
+    }
+
+    &__elem {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+
+        width: 20px;
+        height: 100px;
+        background: url('../images/dist/main-page/about-window-after.svg') no-repeat center / contain;
+
+        &_right {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;  
+            background: url('../images/dist/main-page/about-window-after-right.svg') no-repeat center / contain;
+        }
+    }
+
+    &__rectangle {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        width: 20px;
+        height: auto;
+        background: $background-window-info;
+        border-radius: 0 0 $radius-window-info 0;
+        backdrop-filter: blur(3.5px);
+
+        &_right {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3; 
+            border-radius: 0 0 0 $radius-window-info; 
+        }
+    }
+
+    &__description-wrap {
+        position: relative;
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+        width: 100%;
+        height: 100%;
+        background: $background-window-info;
+        backdrop-filter: blur(3.5px);
+        padding: 26px 9px 29px 38px;
+
+        &::before {
+            position: absolute;
+            z-index: 0;
+            content: '';
+            top: 0;
+            left: 14px;
+            width: 88px;
+            height: 48px;
+            background: url('../images/dist/main-page/about-window-pattern.svg') no-repeat center / contain;    
+        }
+
+        &_right {
+            grid-column: 2 / 3;
+            grid-row: 1 / 3; 
+            padding: 26px 24px 29px 23px;
+        }
+    }
+
+    &__description {
+        position: relative;
+        z-index: 1;
+        font-family: $userfont2;
+        font-size: 16px;
+        line-height: 120%;
+        font-weight: 400;
+    }
 }
 
 @import '_media-about';

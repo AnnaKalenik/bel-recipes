@@ -119,6 +119,10 @@ html {
 		mix-blend-mode: multiply;
 		z-index: 1;
 	}
+
+	&_open {
+		overflow: hidden;
+	}
 }
 
 .wrapper {
