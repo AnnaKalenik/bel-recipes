@@ -1,0 +1,126 @@
+.hystmodal {
+    &__window {
+        &_form,
+        &_successful {
+            border-radius: $radius-card;
+            max-width: 460px;
+            width: 100%;
+        }
+
+        &_successful {
+            max-height: 487px;
+            height: 100%;
+        }
+
+        &_shop {
+            border-radius: $radius-card;
+            max-width: 1440px;
+            width: 100%;
+            min-height: 800px;
+        }
+    }
+
+    &__close {
+        &_form,
+        &_successful,
+        &_shop {
+            top: 42px;
+            right: 40px;
+            width: 35px;
+            height: 35px;
+            background: url('../images/dist/main-page/close-modal.svg') no-repeat center / auto, $accent1;
+            border-radius: 50%;
+            box-shadow: $shadow-btn;
+        }
+    }
+}
+
+.modal {
+    padding: 120px 40px;
+
+    &_big {
+        padding: 45px 40px 50px;
+    }
+
+    &__title {
+        display: inline-flex;
+        font-family: $userfont1;
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 110%;
+        margin-bottom: 40px;
+
+        &_big {
+            padding-right: 90px;
+            margin-bottom: 62px;
+        }
+    }
+
+    &__description {
+        font-family: $userfont2;
+        font-size: 18px;
+        line-height: 110%;
+    }
+
+    &__button {
+        max-width: 100%;
+        margin-top: 45px;
+    }
+
+	&__container {
+        max-height: 628px;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 8px;
+            height: auto;
+            border-radius: 9em;
+            background-color: #F4F3F8;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            background-color: $accent1;
+            border-radius: 9em;
+        }
+        
+        &::-webkit-scrollbar-thumb:hover {
+            background-color: $accent1;
+        }
+	}
+
+	&__wrap {
+        display: grid;
+        grid-template-columns: 220px 220px;
+        grid-template-rows: auto;
+        gap: 30px 100px;
+	}
+
+	&__city {
+        @include flex($dir: column, $ai: flex-start, $jc: flex-start);
+        gap: 8px;
+	}
+
+	&__name {
+        font-family: $userfont1;
+        font-size: 20px;
+        line-height: 120%;
+	}
+
+    &__address-link {
+        font-family: $userfont2;
+        font-size: 16px;
+        line-height: 125%;
+        color: $textcolor-dark-gray;
+        transition: color $transition;
+
+        &:hover {
+            color: $accent1;
+        }
+	}
+
+	&__address {
+        font-style: normal;
+	}
+}
+
+@import '_media-modal';

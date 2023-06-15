@@ -1,50 +1,3 @@
-.shops {
-    padding-top: 146px;
-    padding-bottom: 100px;
-
-    &__container {
-        @include container($content-width: rem(1800), $container-offset: rem(35));  
-    }
-
-    &__wrap {
-        @include flex;
-        gap: 40px;
-        margin-bottom: 52px;
-    }
-
-    &__title {
-        position: relative;
-        @include flex($dir: column, $ai: flex-start, $jc: space-between);
-
-        font-family: $userfont1;
-        font-size: 56px;
-        line-height: 100%;
-        font-weight: 400;
-        color: $textcolor-dark;
-
-        // &::before {
-        //     position: absolute;
-        //     content: '';
-        //     top: calc(35%);
-        //     left: 0;
-        //     width: 20px;
-        //     height: 20px;
-        //     background: $accent1;
-        // }
-    }
-
-    &__weight {
-        font-weight: 700;
-    }
-
-    &__map {
-        min-height: calc(650px + (685 - 650) * ((100vw - 375px) / (1920 - 375)));
-        height: 100%;
-        border-radius: $radius-block;
-        overflow: hidden;
-    }
-}
-
 [class*="copyrights-pane"] {
 	display: none !important;
 }
@@ -53,31 +6,83 @@
 	filter: grayscale(1);
 }
 
-.window {
-    width: 230px;
-    height: 230px;
-    border-radius: 50%;
+.shops {
+    padding-top: 242px;
+    padding-bottom: 100px;
 
-    position: relative;
-    cursor: pointer;
-
-    &:hover .price__wrap::after {
-        width: 180px;
-        height: 180px;
+    &__container {
+        @include container($content-width: rem(1800), $container-offset: rem(35));  
     }
+
+    &__wrap {
+        @include flex;
+        gap: 150px;
+        margin-bottom: 20px;
+        margin-left: Min(Max(0px,20vw),150px);
+    }
+
+    &__title-wrap {
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: '';
+            z-index: 0;
+            top: -140%;
+            left: -60%;
+            width: 511px;
+            height: 511px;
+            background: url('../images/dist/shops-page/shops-title-before.webp') no-repeat center / contain;
+        }
+    }
+
+    &__title {
+        position: relative;
+        z-index: 1;
+        max-width: 682px;
+
+        font-family: $userfont1;
+        font-size: 56px;
+        line-height: 100%;
+        font-weight: 400;
+        color: $textcolor-dark;
+    }
+
+    &__weight {
+        font-weight: 700;
+    }
+
+    &__window {
+        margin-bottom: -140px;
+        z-index: 3;
+    }
+
+    &__map {
+        min-height: 820px;
+        height: 100%;
+        border-radius: $radius-block;
+        overflow: hidden;
+    }
+}
+
+.window {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    position: relative;
 
     &__wrap {
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        @include flex($dir: column);
-        gap: 4px;
+        @include flex($dir: column, $jc: flex-end);
+        gap: 10px;
 
-        width: 170px;
-        height: 170px;
+        width: 320px;
+        height: 320px;
         border-radius: 50%;
-        padding: Min(Max(15px,5vw),24px);
+        padding: Min(Max(35px,2vw),45px);
 
         &::before,
         &::after {
@@ -92,68 +97,151 @@
         }
 
         &::before {
-            width: 230px;
-            height: 230px;
+            width: 400px;
+            height: 400px;        
             border: 1px solid $accent3;
         }
 
         &::after {
-            width: 170px;
-            height: 170px;
-            background: $accent3;
-            transition: width $transition, height $transition;
-        }
-    }
-
-    &__wrap-icon {
-        width: Min(Max(20px,3vw),27px);
-        height: Min(Max(27px,3vw),37px);
-        z-index: 1;
-    }
-
-    &__icon {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-
-    &__text-big,
-    &__text-small {
-        font-family: $userfont1;
-        color: $textcolor-light;
-        z-index: 1;
-    }
-
-    &__text-big {
-        position: relative;
-        font-size: 24px;
-        line-height: 90%;
-        font-weight: 700;
-
-        &::before,
-        &::after {
-            position: absolute;
-            content: '';
-            top: calc(55%);
-            width: 5px;
-            height: 5px;
+            width: 320px;
+            height: 320px;
             background: $textcolor-light;
         }
+    }
 
-        &::before {
-            left: -14px;
+	&__text {
+        z-index: 1;
+        font-family: $userfont1;
+        font-size: 14px;
+        line-height: 110%;
+        color: $textcolor-light-gray;
+        text-transform: uppercase;
+	}
+
+	&__list-wrap {
+        z-index: 2;
+        font-family: $userfont1;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 110%;
+        color: $textcolor-dark;
+
+        position: relative;
+        display: inline-block;
+
+        &:hover .info__tooltip-button {
+            filter: brightness(100%) contrast(5%);
         }
+	}
+
+	&__button {
+        transition: filter $transition;
+        cursor: pointer;
+        padding-right: 14px;
 
         &::after {
-            right: -14px;
+            content: '';
+            position: absolute;
+            top: 40%;
+            right: 0px;
+            width: 11px;
+            height: 11px;
+            background: url('../images/dist/shops-page/arrow-green.svg') no-repeat center / contain;
+            transition: transform $transition;
         }
-    }
 
-    &__text-small {
-        font-size: 20px;
-        line-height: 90%;
+        &_active.window__button::after {
+            transform: rotate(180deg);
+        }
+	}
+
+	&__list {
+        visibility: hidden;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -110px;
+        min-width: 224px;
+        width: 100%;
+
+        @include flex($dir: column, $ai: flex-start);
+        gap: 3px;
+
+        background: $accent3;
+        border-radius: 18px;
+        padding: 10px 19px 15px;
+        box-shadow: 0px 10px 30px rgba(42, 42, 42, 0.15);
+
+        &_active {
+            visibility: visible;
+        }
+	}
+
+	&__link {
         font-weight: 400;
-    }
+        font-size: 18px;
+        color: $textcolor-light;
+        cursor: pointer;
+
+        &_active {
+            font-weight: 700;
+            cursor: default;
+        }
+
+        &:hover {
+            font-weight: 700;
+        }
+	}
+
+	&__count {
+        z-index: 1;
+        @include flex($dir: column);
+        font-family: $userfont2;
+        margin: 10px 0 5px;
+	}
+
+	&__num {
+        font-weight: 500;
+        font-size: 68px;
+        line-height: 110%;
+        color: $accent3;
+	}
+
+    &__name {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 110%;
+        text-transform: lowercase;
+	}
+
+	&__btn-modal {
+        position: relative;
+        z-index: 1;
+        font-family: $userfont1;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 17px;
+        color: $textcolor-light-gray;
+        text-transform: uppercase;
+        padding-top: 20px;
+        transition: color $transition;
+        cursor: pointer;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 18px;
+            height: 8px;
+            background: url('../images/dist/shops-page/arrow-gray.svg') no-repeat center / contain;
+        }
+
+        &:hover {
+            color: $textcolor-dark;
+        }
+	}
 }
 
 @import '_media-map-shops';

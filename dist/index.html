@@ -27,20 +27,22 @@
 							<li class="nav__item"><a href="./product.html" class="nav__link">Продукция</a></li>
 							<li class="nav__item"><a href="./about-us.html" class="nav__link">О нас</a></li>
 							<li class="nav__item"><a href="./partners.html" class="nav__link">Партнерам</a></li>
-							<li class="nav__item"><a href="./shops.html" class="nav__link">Где купить?</a></li>
+							<li class="nav__item"><a href="./shops-belr.html" class="nav__link">Где купить?</a></li>
 						</ul>
 					</nav>
 					
 					<a href="./" class="logo header__logo">
-						<picture class="logo__img">
+						<!-- <picture class="logo__img">
                             <source media="(max-width: 1200px)" srcset="./images/dist/header/logo-header-mob.svg">
                             <img class="logo__img" src="./images/dist/header/logo-header.svg" alt="Белоруские рецепты логотип" width="142.23" height="126">
-                        </picture>
+                        </picture> -->
+						<img class="logo__img" src="./images/dist/header/logo-header.svg" alt="Белоруские рецепты логотип" width="142.23" height="126">
+
 					</a>
 	
 					<div class="header__buttons">
 						<a href="tel:+79266033699 " class="header__tel" aria-label="Телефон">+7 926 603-36-99</a>
-						<button class="header__btn" data-hystmodal="#myModal">Заказать звонок</button>
+						<button class="header__btn" data-modalcall="#modalCall">Заказать звонок</button>
 						<div class="header__search search">
 							<button class="search__btn" aria-label="Поиск" id="btn-search">
 								<svg class="search__icon" fill="none" viewBox="0 0 16 16">
@@ -73,7 +75,7 @@
 										<li class="nav__item"><a href="./product.html" class="nav__link">Продукция</a></li>
 										<li class="nav__item"><a href="./about-us.html" class="nav__link">О нас</a></li>
 										<li class="nav__item"><a href="./partners.html" class="nav__link">Партнерам</a></li>
-										<li class="nav__item"><a href="./shops.html" class="nav__link">Где купить?</a></li>
+										<li class="nav__item"><a href="./shops-belr.html" class="nav__link">Где купить?</a></li>
 									</ul>
 								</nav>
 							</div>
@@ -101,7 +103,7 @@
 										</svg>
 									</a>
 								</div>
-								<button class="header__btn header__btn_mobile">Заказать звонок</button>
+								<button class="header__btn header__btn_mobile" data-modalcall="#modalCall">Заказать звонок</button>
 							</div>	
 						</div>
 					</div>
@@ -321,10 +323,11 @@
 
 					<div class="footer__left">
 						<a href="./" class="logo footer__logo">
-							<picture class="logo__img">
+							<!-- <picture class="logo__img">
 								<source media="(max-width: 1200px)" srcset="./images/dist/header/logo-header-mob.svg">
 								<img class="logo__img" src="./images/dist/header/logo-header.svg" alt="Белоруские рецепты логотип" width="142.23" height="126">
-							</picture>
+							</picture> -->
+							<img class="logo__img" src="./images/dist/header/logo-header.svg" alt="Белоруские рецепты логотип" width="142.23" height="126">
 						</a>
 						<div class="footer__phrase">
 							<span class="footer__part1">С любовью</span>
@@ -378,44 +381,45 @@
 			</div>
 		</footer>
 
-		            <div class="hystmodal" id="myModal" aria-hidden="true">
+		            <div class="hystmodal" id="modalCall" aria-hidden="true">
                 <div class="hystmodal__wrap">
                     <div class="hystmodal__window hystmodal__window_form" role="dialog" aria-modal="true">
-                        <button data-hystclose class="hystmodal__close">Закрыть</button>
+                        <button data-hystclose class="hystmodal__close hystmodal__close_form"></button>
                         <div class="form form_modal">
+                            <h3 class="form__title">Заказать звонок</h3>
                             <form action="#" method="POST" class="form__body form-contact">      
                                 <div class="form__fields form__fields_modal">
                                     <div class="form__item">
                                         <label for="formText2" class="form__label">
                                             ФИО<span class="form__label-star">*</span>
                                         </label>
-                                        <input type="text" id="formText2" class="form__input" name="name" required>
+                                        <input type="text" id="formText2" class="form__input form__input_modal" name="name" required>
                                     </div>
                                     <div class="form__item">
                                         <label for="formEmail2" class="form__label">
                                             E-mail<span class="form__label-star">*</span>
                                         </label>
-                                        <input type="email" id="formEmail2" class="form__input" name="email" required>
+                                        <input type="email" id="formEmail2" class="form__input form__input_modal" name="email" required>
                                     </div>
                                     <div class="form__item">
                                         <label for="formTel2" class="form__label">Номер телефона</label>
-                                        <input type="tel" id="formTel2" class="form__input" name="phone">
+                                        <input type="tel" id="formTel2" class="form__input form__input_modal" name="phone">
                                     </div>
                                 </div> 
-                                <div class="form__item form__item_big">
+                                <div class="form__item form__item_big form__item_big-modal">
                                     <label for="formComment2" class="form__label form__label_big">Сообщение</label>
-                                    <textarea class="form__input form__input_big" id="formComment2" name="comments"></textarea>
+                                    <textarea class="form__input form__input_big form__input_big-modal" id="formComment2" name="comments"></textarea>
                                 </div>
                                 <div class="form__btn-wrap form__btn-wrap_modal">
                                     <div class="form__politics">
                                         <div class="form__checkbox checkbox">
-                                            <input type="checkbox" id="formAgreement" class="checkbox__input" name="agreement" checked>
+                                            <input type="checkbox" id="formAgreement" class="checkbox__input" tabindex="0" name="agreement" checked>
                                             <label for="formAgreement" class="checkbox__label"></label>
                                         </div>
                                         <a class="form__link form__link_modal" href="#">Соглашаюсь на обработку персональных данных</a>
                                     </div>
                                 
-                                    <button type="submit" class="btn form__button form__button_modal">
+                                    <button type="submit" class="btn form__button form__button_modal" tabindex="0">
                                         Отправить
                                         <span class="btn__arrow"></span>
                                     </button>
@@ -426,13 +430,778 @@
                 </div>
             </div>
 
+		            <div class="hystmodal" id="modalProduct" aria-hidden="true">
+                <div class="hystmodal__wrap">
+                    <div class="hystmodal__window hystmodal__window_product" role="dialog" aria-modal="true">
+                        <button data-hystclose class="hystmodal__close hystmodal__close_product"></button>
+                        <div class="product">
+                            <div class="product__img-wrap">
+                                <img class="product__img" src="./images/dist/product-pages/product.webp" alt="Товар">
+                            </div>
+                            <div class="product__content">
+                                <h2 class="product__title">Вареная колбаса с телятиной</h2>
+
+                                <div class="product__description">
+                                    <div class="product__characteristics">
+                                        <div class="product__item">
+                                            <span class="product__name">Вес продукта:</span>
+                                            <span class="product__value">2,3 кг.</span>
+                                        </div>
+                                        <div class="product__item">
+                                            <span class="product__name">Срок годности:</span>
+                                            <span class="product__value">30 суток.</span>
+                                        </div>
+                                        <div class="product__item">
+                                            <span class="product__name">Условия хранения:</span>
+                                            <span class="product__value">от +2°С до +6°С.</span>
+                                        </div>
+                                        <div class="product__item">
+                                            <span class="product__name">Оболочка:</span>
+                                            <span class="product__value">текстиль</span>
+                                        </div>
+                                        <div class="product__item">
+                                            <span class="product__name">Способ упаковки:</span>
+                                            <span class="product__value">вакуум</span>
+                                        </div>
+                                    </div>
+                                    <div class="product__composition">
+                                        <span class="product__text">Состав:</span>
+                                        <p class="product__paragraph">
+                                            свинина, шпик, говядина, мясо птицы механической обвалки, вода, молочный белок, нитритно-посолочная смесь (соль, фиксатор окраски- нитрит натрия)  соль, регулятор кислотности- фосфаты пищевые, сахар,  экстракт специй (перец черный, кардамон, лимон), антиокислитель - аскорбиновая кислота, усилитель вкуса и аромата-глутамат натрия, пищевой краситель Кармин. Продукт может содержать следы: сои, молока, продуктов яичных, горчицы, злаковых орехов, сельдерея и продуктов их переработки.
+                                        </p>
+                                    </div>
+                                    <div class="product__nutrition">
+                                        <span class="product__text">Пищевая ценность на 100 г. продукта:</span>
+                                        <p class="product__paragraph">
+                                            белки - 11г. жиры - 24г.
+                                        </p>
+                                    </div>
+                                    <div class="product__energy">
+                                        <span class="product__text">Энергетическая ценность на 100г. продукта:</span>
+                                        <p class="product__paragraph">
+                                            260ккал/1075кДж
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+		            <div class="hystmodal" id="modalPrice" aria-hidden="true">
+                <div class="hystmodal__wrap">
+                    <div class="hystmodal__window hystmodal__window_form" role="dialog" aria-modal="true">
+                        <button data-hystclose class="hystmodal__close hystmodal__close_form"></button>
+                        <div class="form form_modal">
+                            <h3 class="form__title">Получить прайс</h3>
+                            <form action="#" method="POST" class="form__body form-contact">      
+                                <div class="form__fields form__fields_modal">
+                                    <div class="form__item">
+                                        <label for="formText2" class="form__label">
+                                            ФИО<span class="form__label-star">*</span>
+                                        </label>
+                                        <input type="text" id="formText2" class="form__input form__input_modal" name="name" required>
+                                    </div>
+                                    <div class="form__item">
+                                        <label for="formEmail2" class="form__label">
+                                            E-mail<span class="form__label-star">*</span>
+                                        </label>
+                                        <input type="email" id="formEmail2" class="form__input form__input_modal" name="email" required>
+                                    </div>
+                                    <div class="form__item">
+                                        <label for="formTel2" class="form__label">Номер телефона</label>
+                                        <input type="tel" id="formTel2" class="form__input form__input_modal" name="phone">
+                                    </div>
+                                </div> 
+                                <div class="form__btn-wrap form__btn-wrap_modal">
+                                    <div class="form__politics">
+                                        <div class="form__checkbox checkbox">
+                                            <input type="checkbox" id="formAgreement" class="checkbox__input" name="agreement" checked tabindex="0">
+                                            <label for="formAgreement" class="checkbox__label"></label>
+                                        </div>
+                                        <a class="form__link form__link_modal" href="#" tabindex="0">Соглашаюсь на обработку персональных данных</a>
+                                    </div>
+                                
+                                    <button type="submit" class="btn form__button form__button_modal" tabindex="0">
+                                        Отправить
+                                        <span class="btn__arrow"></span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+		            <div class="hystmodal" id="modalSuccessful" aria-hidden="true">
+                <div class="hystmodal__wrap">
+                    <div class="hystmodal__window hystmodal__window_successful" role="dialog" aria-modal="true">
+                        <button data-hystclose class="hystmodal__close hystmodal__close_successful"></button>
+                        <div class="modal">
+                            <div class="modal__title">Ваше сообщение отправлено</div>
+                            <div class="modal__description">Мы получили ваше сообщение и ответим на него как можно скорее</div>
+                            <a tabindex="0" href="./" class="btn modal__button">
+                                На главную
+                                <span class="btn__arrow"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+		            <div class="hystmodal" id="modalShopsBelR" aria-hidden="true">
+                <div class="hystmodal__wrap">
+                    <div class="hystmodal__window hystmodal__window_shop" role="dialog" aria-modal="true">
+                        <button data-hystclose class="hystmodal__close hystmodal__close_shop"></button>
+                        <div class="modal modal_big">
+                            <span class="modal__title modal__title_big">Сеть магазинов  “Белорусские рецепты”</span>
+                            <div class="modal__container">
+                                <div class="modal__wrap">
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Королев</span>
+                                        <div class="modal__list">
+                                            <a href="javascript:void(0)" class="modal__address-link">
+                                                <address class="modal__address">ул. Октябрьская, д. 12/2</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Лесная, д. 14</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Сакко и Ванцетти, д. 34В</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Щелково</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Парковая, д. 5</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Зубеева, д. 10Б</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Талсинская, д.2</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address"> ул. Центральная, д. 41/8</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Сергиев-Посад</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">Новоугличское шоссе, д. 58Б</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Фрязино</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">пр-т Мира, д. 8</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">пр-т Мира, д. 17</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Королев</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Октябрьская, д. 12/2</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Лесная, д. 14</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Сакко и Ванцетти, д. 34В</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Щелково</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Парковая, д. 5</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Зубеева, д. 10Б</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Талсинская, д.2</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address"> ул. Центральная, д. 41/8</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Сергиев-Посад</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">Новоугличское шоссе, д. 58Б</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Фрязино</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">пр-т Мира, д. 8</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">пр-т Мира, д. 17</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Королев</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Октябрьская, д. 12/2</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Лесная, д. 14</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Сакко и Ванцетти, д. 34В</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Щелково</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Парковая, д. 5</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Зубеева, д. 10Б</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Талсинская, д.2</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address"> ул. Центральная, д. 41/8</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Сергиев-Посад</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">Новоугличское шоссе, д. 58Б</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Фрязино</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">пр-т Мира, д. 8</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">пр-т Мира, д. 17</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Королев</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Октябрьская, д. 12/2</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Лесная, д. 14</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Сакко и Ванцетти, д. 34В</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Щелково</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Парковая, д. 5</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Зубеева, д. 10Б</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Талсинская, д.2</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address"> ул. Центральная, д. 41/8</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Сергиев-Посад</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">Новоугличское шоссе, д. 58Б</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Фрязино</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">пр-т Мира, д. 8</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">пр-т Мира, д. 17</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+		            <div class="hystmodal" id="modalShopsCheese" aria-hidden="true">
+                <div class="hystmodal__wrap">
+                    <div class="hystmodal__window hystmodal__window_shop" role="dialog" aria-modal="true">
+                        <button data-hystclose class="hystmodal__close hystmodal__close_shop"></button>
+                        <div class="modal modal_big">
+                            <span class="modal__title modal__title_big">Сеть магазинов  “Сыр да масло”</span>
+                            <div class="modal__container">
+                                <div class="modal__wrap">
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Королев</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Октябрьская, д. 12/2</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Лесная, д. 14</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Сакко и Ванцетти, д. 34В</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Щелково</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Парковая, д. 5</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Зубеева, д. 10Б</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Талсинская, д.2</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address"> ул. Центральная, д. 41/8</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Сергиев-Посад</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">Новоугличское шоссе, д. 58Б</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Фрязино</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">пр-т Мира, д. 8</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">пр-т Мира, д. 17</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Королев</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Октябрьская, д. 12/2</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Лесная, д. 14</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Сакко и Ванцетти, д. 34В</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Щелково</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Парковая, д. 5</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Зубеева, д. 10Б</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Талсинская, д.2</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address"> ул. Центральная, д. 41/8</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Сергиев-Посад</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">Новоугличское шоссе, д. 58Б</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Фрязино</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">пр-т Мира, д. 8</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">пр-т Мира, д. 17</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Королев</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Октябрьская, д. 12/2</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Лесная, д. 14</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Сакко и Ванцетти, д. 34В</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Щелково</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Парковая, д. 5</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Зубеева, д. 10Б</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Талсинская, д.2</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address"> ул. Центральная, д. 41/8</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Сергиев-Посад</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">Новоугличское шоссе, д. 58Б</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Фрязино</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">пр-т Мира, д. 8</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">пр-т Мира, д. 17</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Королев</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Октябрьская, д. 12/2</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Лесная, д. 14</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Сакко и Ванцетти, д. 34В</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Щелково</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Парковая, д. 5</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Зубеева, д. 10Б</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Талсинская, д.2</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address"> ул. Центральная, д. 41/8</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Сергиев-Посад</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">Новоугличское шоссе, д. 58Б</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Фрязино</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">пр-т Мира, д. 8</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">пр-т Мира, д. 17</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+		            <div class="hystmodal" id="modalShopsAll" aria-hidden="true">
+                <div class="hystmodal__wrap">
+                    <div class="hystmodal__window hystmodal__window_shop" role="dialog" aria-modal="true">
+                        <button data-hystclose class="hystmodal__close hystmodal__close_shop"></button>
+                        <div class="modal modal_big">
+                            <span class="modal__title modal__title_big">Сеть магазинов  “Есть все”</span>
+                            <div class="modal__container">
+                                <div class="modal__wrap">
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Королев</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Октябрьская, д. 12/2</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Лесная, д. 14</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Сакко и Ванцетти, д. 34В</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Щелково</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Парковая, д. 5</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Зубеева, д. 10Б</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Талсинская, д.2</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address"> ул. Центральная, д. 41/8</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Сергиев-Посад</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">Новоугличское шоссе, д. 58Б</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Фрязино</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">пр-т Мира, д. 8</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">пр-т Мира, д. 17</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Королев</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Октябрьская, д. 12/2</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Лесная, д. 14</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Сакко и Ванцетти, д. 34В</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Щелково</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Парковая, д. 5</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Зубеева, д. 10Б</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Талсинская, д.2</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address"> ул. Центральная, д. 41/8</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Сергиев-Посад</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">Новоугличское шоссе, д. 58Б</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Фрязино</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">пр-т Мира, д. 8</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">пр-т Мира, д. 17</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Королев</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Октябрьская, д. 12/2</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Лесная, д. 14</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Сакко и Ванцетти, д. 34В</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Щелково</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Парковая, д. 5</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Зубеева, д. 10Б</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Талсинская, д.2</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address"> ул. Центральная, д. 41/8</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Сергиев-Посад</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">Новоугличское шоссе, д. 58Б</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Фрязино</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">пр-т Мира, д. 8</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">пр-т Мира, д. 17</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Королев</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Октябрьская, д. 12/2</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Лесная, д. 14</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Сакко и Ванцетти, д. 34В</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Щелково</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Парковая, д. 5</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Зубеева, д. 10Б</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">ул. Талсинская, д.2</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address"> ул. Центральная, д. 41/8</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Сергиев-Посад</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">Новоугличское шоссе, д. 58Б</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="modal__city">
+                                        <span class="modal__name">г. Фрязино</span>
+                                        <div class="modal__list">
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">пр-т Мира, д. 8</address>
+                                            </a>
+                                            <a href="#" class="modal__address-link">
+                                                <address class="modal__address">пр-т Мира, д. 17</address>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
 	</div>
 
-	<script src="js/hystModal/hystmodal.min.js"></script>
-
+	<script src="js/hystmodal.min.js"></script>
 	<script src="js/swiper-bundle.min.js"></script>
-	<script src="js/app.min.js"></script>
+	<script src="js/app.js"></script>
+	<!-- <script src="js/app.min.js"></script> -->
 
 </body>
 </html>

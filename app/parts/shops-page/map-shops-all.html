@@ -1,0 +1,55 @@
+            <div class="shops">
+                <div class="container shops__container">
+                    <div class="shops__wrap">
+                        <div class="shops__title-wrap">
+                            <h1 class="shops__title">
+                                Продукцию<br>  в Московском регионе<br> <span class="shops__weight">можно приобрести:</span>
+                            </h1>
+                        </div>
+                        <div class="shops__window window">
+                            <div class="window__wrap">
+                                <span class="window__text">Выберите сеть</span>
+                                <div class="window__list-wrap">
+                                    <span class="window__button" type="button" tabindex="0">Есть все</span>
+                                    <div class="window__list">
+                                        <a class="window__link" href="./shops-belr.html">Белорусские рецепты</a>
+                                        <a class="window__link" href="./shops-cheese.html">Сыр да масло</a>
+                                        <span class="window__link window__link_active">Есть все</span>
+                                    </div>
+                                </div>
+                                <div class="window__count">
+                                    <span class="window__num">20</span>
+                                    <span class="window__name">Магазинов</span>
+                                </div>
+                                <span class="window__btn-modal" type="button" tabindex="0" data-modalcall="#modalShopsAll">Список</span>
+                            </div>
+                        </div>    
+                    </div> 
+                    
+                    <div class="shops__map" id="map">
+                        <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU"></script>
+                    </div> 
+                </div>
+            </div>
+
+            <script defer>
+                let center = [55.75399399999374, 37.62209300000001];
+              
+                function init() {
+                  let map = new ymaps.Map("map", {
+                    center: center,
+                    zoom: 9
+                  });
+                
+                  map.controls.remove('geolocationControl');
+                  map.controls.remove('searchControl');
+                  map.controls.remove('trafficControl');
+                  map.controls.remove('typeSelector');
+                  map.controls.remove('fullscreenControl');
+                  map.controls.remove('zoomControl');
+                  map.controls.remove('rulerControl');
+                }
+              
+                ymaps.ready(init);
+
+            </script>

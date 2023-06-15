@@ -1,0 +1,112 @@
+.hystmodal {
+    &__window {
+        &_product {
+            border-radius: $radius-card;
+            max-width: 1440px;
+            width: 100%;
+            min-height: 600px;
+        }
+    }
+
+    &__close {
+        &_product {
+            top: 35px;
+            right: 35px;
+            width: 40px;
+            height: 40px;
+            background: url('../images/dist/main-page/close-modal.svg') no-repeat center / auto, $accent1;
+            border-radius: 50%;
+            box-shadow: $shadow-btn;
+        }
+    }
+}
+
+.product {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    border-radius: $radius-card;
+    overflow: hidden;
+    height: 100%;
+
+    &__img-wrap {
+        @include flex;
+        background: #D7EBE5;
+        padding: 57px;
+        max-width: 500px;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    &__content {
+        align-self: flex-start;
+        @include flex($dir: column, $ai: stretch);
+        gap: 56px;
+        padding: 38px 35px 60px 56px;
+    }
+
+    &__title {
+        display: inline-flex;
+        font-family: $userfont1;
+        font-weight: 400;
+        font-size: 26px;
+        line-height: 110%;
+        margin-right: 90px;
+    }
+
+    &__description {
+        @include flex($dir: column, $ai: stretch);
+        gap: 40px;
+    }
+
+    &__characteristics {
+        @include flex($jc: flex-start);
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    &__item {
+        @include flex($dir: column, $ai: stretch);
+        gap: 3px;
+    }
+
+    &__name {
+        font-family: $userfont2;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 120%;
+        color: $textcolor-light-gray;
+        text-transform: uppercase;
+    }
+
+    &__value {
+        font-family: $userfont1;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 120%;
+    }
+
+    &__text {
+        display: inline-flex;
+        font-family: $userfont1;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 120%;
+        margin-bottom: 6px;
+        margin-left: -1px;
+    }
+
+    &__paragraph {
+        font-family: $userfont2;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+        color: $textcolor-dark-gray;
+    }
+}
+
+@import '_media-modal-product';

@@ -1,5 +1,5 @@
 @media (max-width: 1200px) {
-    .hero2 {
+    .hero-about {
         &__container {
             padding-top: 200px;
         }
@@ -17,7 +17,7 @@
 }
 
 @media (max-width: 768px) {
-    .hero2 {
+    .hero-about {
         &__container {
             padding: 200px 35px 175px;
         }
@@ -67,7 +67,7 @@
 }
 
 @media (max-width: 576px) {
-    .hero2 {
+    .hero-about {
         &__container {
             padding: 185px 25px 175px;
             gap: 108px;

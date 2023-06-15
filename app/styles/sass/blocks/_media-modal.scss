@@ -1,0 +1,98 @@
+@media (max-width: 1470px) {
+    .hystmodal {
+        &__window {
+            &_shop {
+                max-width: calc(100% - 30px);
+                min-height: 700px;
+            }
+        }
+    }
+
+    .modal {       
+	    &__container {
+            max-height: 480px;
+	    }
+    }
+}
+
+@media (max-width: 768px) {
+    .modal {       
+        &__wrap {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            gap: 30px;
+        }
+
+        &__container {
+            height: 100%;
+	    }
+    }
+}
+
+@media (max-width: 576px) {
+    .hystmodal {
+        &__close {
+            &_shop {
+                right: 25px;
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+
+    .modal {
+        &_big {
+            padding: 80px 20px 36px;
+        }
+
+        &__title {
+            font-size: 20px;
+    
+            &_big {
+                display: flex;
+                padding-right: 0;
+                margin-right: 55px;
+                margin-bottom: 40px;
+            }
+        } 
+
+        &__description {
+            font-size: 16px;
+        }
+    }
+}
+
+@media (max-width: 490px) {
+    .hystmodal {
+        &__window {
+            &_form,
+            &_successful {
+                max-width: calc(100% - 30px);
+            }
+        }
+
+        &__close {
+            &_form,
+            &_successful {
+                right: 25px;
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+
+    .modal {
+        padding: 120px 20px;   
+
+        &_big {
+            padding: 80px 20px 36px;
+        }
+
+        &__container {  
+            &::-webkit-scrollbar {
+                width: 0px
+            }
+        }
+    
+    }
+}
