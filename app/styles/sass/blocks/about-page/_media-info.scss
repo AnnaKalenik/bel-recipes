@@ -443,3 +443,13 @@
         }
     }
 }
+
+@media (max-width: 416px) {
+    .info {
+        &__tooltip-window {
+            position: absolute;
+            left: 90px;
+            width: 290px;
+        }  
+    }
+}

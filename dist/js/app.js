@@ -125,28 +125,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	//Формы
 	function form() {
-		const form = document.querySelector('.form-contact');
-		const allInputs = form.querySelectorAll('.form__input');
+		const allForms = document.querySelectorAll('.form-contact');
 
-		if (form) {
-			//убираем label вверх при фокусе ------------------------------------------------
-			allInputs.forEach(input => input.onfocus = function() {
-				const id = this.id;
-				const label = form.querySelector(`[for=${id}]`);
-		
-				label.classList.add('form__label_active');
-			});
-		
-			//добавляем label обратно при переключении фокуса, если инпут пустой ----------------
-			allInputs.forEach(input => input.addEventListener('focusout', function () {
-				if (!this.value) {
+		console.log(allForms);
+
+		allForms.forEach(form => {
+			const allInputs = form.querySelectorAll('.form__input');
+
+			if (form) {
+				//убираем label при фокусе ------------------------------------------------
+				allInputs.forEach(input => input.onfocus = function() {
 					const id = this.id;
 					const label = form.querySelector(`[for=${id}]`);
-		
-					label.classList.remove('form__label_active');
-				} 
-			}));
-		} else return;
+				
+					label.classList.add('form__label_active');
+				});
+			
+				//добавляем label обратно при переключении фокуса, если инпут пустой ----------------
+				allInputs.forEach(input => input.addEventListener('focusout', function () {
+					if (!this.value) {
+						const id = this.id;
+						const label = form.querySelector(`[for=${id}]`);
+					
+						label.classList.remove('form__label_active');
+					} 
+				}));
+
+			} else return;
+		})
 	}
 	form();
 
