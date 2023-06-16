@@ -16,6 +16,14 @@
 }
 
 @media (max-width: 768px) {
+    .hystmodal {
+        &__window {
+            &_shop {
+                margin: 30px 0;
+            }
+        }
+    }
+
     .modal {       
         &__wrap {
             grid-template-columns: 1fr;
@@ -68,6 +76,7 @@
             &_form,
             &_successful {
                 max-width: calc(100% - 30px);
+                margin: 30px 0;
             }
         }
 

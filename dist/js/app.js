@@ -126,9 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	//Формы
 	function form() {
 		const allForms = document.querySelectorAll('.form-contact');
-
-		console.log(allForms);
-
+		
 		allForms.forEach(form => {
 			const allInputs = form.querySelectorAll('.form__input');
 
