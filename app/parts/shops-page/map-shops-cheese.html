@@ -10,7 +10,7 @@
                             <div class="window__wrap">
                                 <span class="window__text">Выберите сеть</span>
                                 <div class="window__list-wrap">
-                                    <span class="window__button" type="button" tabindex="0">Сыр да масло</span>
+                                    <button class="window__button" type="button" tabindex="0">Сыр да масло</button>
                                     <div class="window__list">
                                         <a class="window__link" href="./shops-belr.html">Белорусские рецепты</a>
                                         <span class="window__link window__link_active">Сыр да масло</span>
@@ -21,18 +21,18 @@
                                     <span class="window__num">20</span>
                                     <span class="window__name">Магазинов</span>
                                 </div>
-                                <span class="window__btn-modal" type="button" tabindex="0" data-modalcall="#modalShopsCheese">Список</span>
+                                <button class="window__btn-modal" type="button" tabindex="0" data-modalcall="#modalShopsCheese">Список</button>
                             </div>
                         </div>    
                     </div> 
                     
                     <div class="shops__map" id="map">
-                        <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU"></script>
+                        <script src="https://api-maps.yandex.ru/2.1/?apikey=вашAPI-ключ&lang=ru_RU"></script>
                     </div> 
                 </div>
             </div>
 
-            <script defer>
+            <script>
               let center = [55.75399399999374,37.62209300000001];
 
               function init() {

@@ -425,6 +425,12 @@
             }
         }
 
+        &__name {
+            &_left-right {
+                left: calc(40px + (175 - 40) * ((100vw - 375px) / (1920 - 375)));
+            }
+        }
+
         &__window {  
             transform: translateY(-160%);
        
@@ -448,6 +454,19 @@
                 transform: translateY(50%);
             }
         }  
+    }
+}
+
+@media (max-width: 490px) {
+    .about {
+        background-size: 18%, 35%;
+
+        &__name {
+            &_left-right {
+                left: calc(-125px + (-175 + 125) * ((100vw - 375px) / (1920 - 375)));
+                text-align: right;
+            }
+        }
     }
 }
 

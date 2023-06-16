@@ -12,24 +12,16 @@
 
 @media (max-width: 1440px) {
     .contact {
-        &__title {
-            padding: 68px 0 0 76px;
-
-            &::after {
-                left: 68px;
-            }
-        }
-
-        &__left-wrap {
-            padding: 0 0 0 76px;
+        &__wrap {
+            padding: 40px 80px 76px;
         }
 
         &__img {
-            left: 140px;
+            left: 60px;
         }
 
-        &__right-wrap {
-            padding: 68px 80px 76px 0;
+        &__form-wrap {
+            margin-top: 35px;
         }
     }
 }
@@ -45,31 +37,37 @@
             padding: Min(Max(10px,3.5vw), 80px) Min(Max(20px,5.5vw), 80px) 0px;
         }
 
+        &__wrap {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto;
+            gap: 45px;
+            padding: 0;
+        }
+
         &__title {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+
             width: 100%;
             padding: 0;
-            margin-bottom: 50px;
+            margin-bottom: 5px;
 
             &::after {
                 left: auto;
-                right: -60%;
-                bottom: 0px;
+                right: 15px;
+                bottom: -35px;
                 width: 40px;
                 height: 40px;
             }
         }
 
-        &__wrap {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: auto;
-            gap: 51px;
-        }
-
-        &__left-wrap {
+        &__img-wrap {
+            grid-column: 1 / 2;
+            grid-row: 3 / 4;
+    
             position: static;
             @include flex($dir: column);
-            padding: 0;
         }
 
         &__img {  
@@ -77,10 +75,10 @@
             margin-bottom: -85px;
         }
 
-        &__right-wrap {
-            grid-column: 1 / 1;
-            grid-row: 1 / 1;
-            padding: 0;
+        &__form-wrap {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+
             margin-top: 0;
         }
     }
@@ -90,24 +88,6 @@
     .contact {
         &__container {
             padding: 0 15px;
-        }
-
-        &__title {
-            &::after {
-                right: -100%;
-                bottom: -40px;
-            }
-        }
-    }
-}
-
-@media (max-width: 576px) {
-    .contact {
-        &__title {
-            &::after {
-                right: -120%;
-                bottom: -33px;
-            }
         }
     }
 }

@@ -2,7 +2,7 @@
     background: url('../images/dist/main-page/about-bg-left.webp'), url('../images/dist/main-page/about-bg-right.webp');
     background-repeat: no-repeat;
     background-position: bottom 100px left, bottom 100px right;
-    background-size: auto;
+    background-size: contain, auto;
 
     &__container {
         position: relative;

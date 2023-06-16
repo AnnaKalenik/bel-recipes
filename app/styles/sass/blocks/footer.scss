@@ -34,6 +34,7 @@
         width: 620px;
         @include flex($dir: column, $ai: stretch);
         gap: 20px;
+        font-weight: 400;
     }
 
     &__contacts {
@@ -50,7 +51,9 @@
     &__title {
         margin-bottom: 15px;
         color: $textcolor-light; 
+        font-weight: 500;
     }
+
     
     &__link {
         color: $textcolor-dark; 
@@ -67,7 +70,8 @@
     }
 
     &__text {
-        color: $textcolor-light; 
+        color: $textcolor-light;
+        font-weight: 400; 
     }
 
     &__soc-links {
