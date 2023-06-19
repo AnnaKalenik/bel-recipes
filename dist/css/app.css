@@ -2795,7 +2795,7 @@ swiper-container .swiper-notification {
 }
 
 .info__item_3:after {
-    background: url(../images/dist/about-page/before-img-2.webp) no-repeat 50%/contain;
+    background: url(../images/dist/about-page/before-img-2.png) no-repeat 50%/contain;
     bottom: -160px;
     content: "";
     height: min(max(125px, 30vw), 292px);
@@ -3051,7 +3051,6 @@ swiper-container .swiper-notification {
 }
 
 .info__ingredient {
-    background: hsla(0, 0%, 100%, .35);
     border-radius: 50%;
     cursor: pointer;
     height: 280px;
@@ -3060,42 +3059,6 @@ swiper-container .swiper-notification {
     top: 32.5%;
     width: 280px;
     z-index: 2
-}
-
-.info__ingredient:before {
-    backdrop-filter: blur(1px);
-    -webkit-backdrop-filter: blur(1px);
-    border-radius: 50%;
-    -webkit-box-shadow: 0 0 5px 15px hsla(0, 0%, 100%, .35);
-    box-shadow: 0 0 5px 15px hsla(0, 0%, 100%, .35);
-    content: "";
-    -webkit-filter: blur(7.5px);
-    filter: blur(7.5px);
-    height: 302px;
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    width: 302px;
-    z-index: 0
-}
-
-.info__ingredient:after {
-    backdrop-filter: blur(1px);
-    -webkit-backdrop-filter: blur(1px);
-    border-radius: 50%;
-    content: "";
-    height: 322px;
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    width: 322px;
-    z-index: 1
 }
 
 .info__ingredient:hover .info__ingredient-wrap_green:after {
@@ -3334,16 +3297,6 @@ swiper-container .swiper-notification {
         width: calc(230.29126px + 2.589vw)
     }
 
-    .info__ingredient:before {
-        height: calc(256.01942px + 2.39482vw);
-        width: calc(256.01942px + 2.39482vw)
-    }
-
-    .info__ingredient:after {
-        height: calc(263.59223px + 3.04207vw);
-        width: calc(263.59223px + 3.04207vw)
-    }
-
     .info__ingredient:hover .info__ingredient-wrap_green:after {
         height: calc(183.96117px + 1.87702vw);
         width: calc(183.96117px + 1.87702vw)
@@ -3413,6 +3366,11 @@ swiper-container .swiper-notification {
     .info__item_4:before {
         right: 120px
     }
+
+    .info__ingredient {
+        left: 26%;
+        top: 31%
+    }
 }
 
 @media (max-width:1300px) {
@@ -3467,14 +3425,19 @@ swiper-container .swiper-notification {
     }
 
     .info__ingredient {
-        left: 20.5%;
-        top: 30.5%
+        left: 20%;
+        top: 30.2%
     }
 }
 
 @media (max-width:1024px) {
     .info__item_1:before {
         right: 170px
+    }
+
+    .info__ingredient {
+        left: 17%;
+        top: 30%
     }
 }
 
@@ -3663,11 +3626,6 @@ swiper-container .swiper-notification {
         font-size: 18px;
         line-height: 140%
     }
-
-    .info__ingredient {
-        left: 17.5%;
-        top: 30.5%
-    }
 }
 
 @media (max-width:576px) {
@@ -3677,6 +3635,11 @@ swiper-container .swiper-notification {
 
     .info__item_3:after {
         bottom: -125px
+    }
+
+    .info__ingredient {
+        left: 17.5%;
+        top: 32%
     }
 }
 
@@ -4423,7 +4386,7 @@ swiper-container .swiper-notification {
 }
 
 .about {
-    background: url(../images/dist/main-page/about-bg-left.webp), url(../images/dist/main-page/about-bg-right.webp);
+    background: url(../images/dist/main-page/about-bg-left.webp), url(../images/dist/main-page/about-bg-right.png);
     background-position: bottom 100px left, bottom 100px right;
     background-repeat: no-repeat;
     background-size: contain, auto
@@ -5034,7 +4997,7 @@ swiper-container .swiper-notification {
 
 @media (max-width:768px) {
     .about {
-        background: url(../images/dist/main-page/about-bg-left-mob.webp), url(../images/dist/main-page/about-bg-right-mob.webp);
+        background: url(../images/dist/main-page/about-bg-left-mob.webp), url(../images/dist/main-page/about-bg-right-mob.png);
         background-position: bottom 19% left, bottom 5% right;
         background-repeat: no-repeat;
         background-size: auto
@@ -8636,7 +8599,7 @@ swiper-container .swiper-notification {
 }
 
 .shops__title-wrap:before {
-    background: url(../images/dist/shops-page/shops-title-before.webp) no-repeat 50%/contain;
+    background: url(../images/dist/shops-page/shops-title-before.png) no-repeat 50%/contain;
     content: "";
     height: 511px;
     left: -60%;

@@ -88,7 +88,7 @@
                 right: 70px;
                 width: Min(Max(118px,30vw),275px);
                 height: Min(Max(125px,30vw),292px);    
-                background: url('../images/dist/about-page/before-img-2.webp') no-repeat center / contain;
+                background: url('../images/dist/about-page/before-img-2.png') no-repeat center / contain;
             }
         }
 
@@ -322,41 +322,6 @@
         top: 32.5%;
         left: 27.5%;
         cursor: pointer;
-        background: rgba(255, 255, 255, 0.35);
-
-        &::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 0;
-
-            width: 302px;
-            height: 302px;
-            
-            border-radius: 50%; 
-            filter: blur(7.5px);
-            backdrop-filter: blur(1px);
-            -webkit-backdrop-filter: blur(1px);
-            box-shadow: 0 0 5px 15px rgba(255, 255, 255, 0.35);
-        }
-
-        &::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1;
-
-            width: 322px;
-            height: 322px;
-            
-            border-radius: 50%; 
-            backdrop-filter: blur(1px);
-            -webkit-backdrop-filter: blur(1px);
-        }
 
         &:hover .info__ingredient-wrap_green::after {
             width: 220px;
