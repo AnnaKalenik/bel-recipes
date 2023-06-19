@@ -53,7 +53,7 @@
         transition: box-shadow $transition;
 
         &::placeholder {
-            @include font($sz: rem(16), $lh: 120%, $wt: 400);
+            @include font($sz: rem(16), $lh: 100%, $wt: 400);
             color: $textcolor-light-gray;
         }
 

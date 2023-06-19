@@ -2156,7 +2156,7 @@ swiper-container .swiper-notification {
     font-size: 1rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 120%
+    line-height: 100%
 }
 
 .search__input::-moz-placeholder {
@@ -2164,7 +2164,7 @@ swiper-container .swiper-notification {
     font-size: 1rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 120%
+    line-height: 100%
 }
 
 .search__input:-ms-input-placeholder {
@@ -2172,7 +2172,7 @@ swiper-container .swiper-notification {
     font-size: 1rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 120%
+    line-height: 100%
 }
 
 .search__input::-ms-input-placeholder {
@@ -2180,7 +2180,7 @@ swiper-container .swiper-notification {
     font-size: 1rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 120%
+    line-height: 100%
 }
 
 .search__input::placeholder {
@@ -2188,7 +2188,7 @@ swiper-container .swiper-notification {
     font-size: 1rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 120%
+    line-height: 100%
 }
 
 .search__input:focus {
