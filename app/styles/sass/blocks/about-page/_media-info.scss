@@ -24,8 +24,13 @@
             height: calc(240px + (280 - 240) * ((100vw - 375px) / (1920 - 375)));
         
             &::before {   
-                width: calc(265px + (312 - 265) * ((100vw - 375px) / (1920 - 375)));
-                height: calc(265px + (312 - 265) * ((100vw - 375px) / (1920 - 375)));
+                width: calc(265px + (302 - 265) * ((100vw - 375px) / (1920 - 375)));
+                height: calc(265px + (302 - 265) * ((100vw - 375px) / (1920 - 375)));
+            }
+
+            &::after {   
+                width: calc(275px + (322 - 275) * ((100vw - 375px) / (1920 - 375)));
+                height: calc(275px + (322 - 275) * ((100vw - 375px) / (1920 - 375)));
             }
     
             &:hover .info__ingredient-wrap_green::after {

@@ -85,31 +85,19 @@
         }
 
         & .swiper-button.next {
-            right: 0;
+            right: -20px;
         }
 
-        & .swiper-button.prev::before,
-        & .swiper-button.next::before {
-            content: '';
+        & .swiper-button.prev .delivery__icon,
+        & .swiper-button.next .delivery__icon {
             position: absolute;
-            z-index: 1;
+            z-index: 2;
             top: 54%;
-            width: 30px;
-            height: 60px;
-            background: url('../images/dist/partners-page/slider-arrow-left.svg') no-repeat center / contain;
+            transition: opacity $transition;
         }
 
-        & .swiper-button.prev::before {
-            left: 3px;
-        }
-
-        & .swiper-button.next::before {
-            right: 3px;
-            transform: scale(-1, 1);
-        }
-
-        & .swiper-button.swiper-button-disabled::before {
-            background: url('../images/dist/partners-page/slider-arrow-disabled.svg') no-repeat center / contain;
+        & .swiper-button.swiper-button-disabled .delivery__icon {
+            opacity: 0.2;
         }
     }
 }

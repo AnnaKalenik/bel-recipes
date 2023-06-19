@@ -249,8 +249,48 @@
                                 </div>
                             </div>
                             <div class="delivery__btns">
-                                <div class="swiper-button prev"></div>
-                                <div class="swiper-button next"></div>
+                                <div class="swiper-button prev">
+                                    <svg class="delivery__icon" width="29" height="36" viewBox="0 0 29 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g filter="url(#filter0_d_630_7160)">
+                                            <path d="M18 21L11 14L18 7" stroke="#2A2A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        </g>
+                                        <defs>
+                                            <filter id="filter0_d_630_7160" x="0" y="0" width="29" height="36" filterUnits="userSpaceOnUse"
+                                                color-interpolation-filters="sRGB">
+                                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                                    result="hardAlpha" />
+                                                <feOffset dy="4" />
+                                                <feGaussianBlur stdDeviation="5" />
+                                                <feComposite in2="hardAlpha" operator="out" />
+                                                <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.2 0" />
+                                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_630_7160" />
+                                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_630_7160" result="shape" />
+                                            </filter>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <div class="swiper-button next">
+                                    <svg class="delivery__icon" width="29" height="36" viewBox="0 0 29 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g filter="url(#filter0_d_630_7159)">
+                                            <path d="M11 21L18 14L11 7" stroke="#2A2A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        </g>
+                                        <defs>
+                                            <filter id="filter0_d_630_7159" x="0" y="0" width="29" height="36" filterUnits="userSpaceOnUse"
+                                                color-interpolation-filters="sRGB">
+                                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                                    result="hardAlpha" />
+                                                <feOffset dy="4" />
+                                                <feGaussianBlur stdDeviation="5" />
+                                                <feComposite in2="hardAlpha" operator="out" />
+                                                <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.2 0" />
+                                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_630_7159" />
+                                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_630_7159" result="shape" />
+                                            </filter>
+                                        </defs>
+                                    </svg>
+                                </div>
                             </div> 
                         </div>
     
@@ -397,7 +437,7 @@
 		            <div class="hystmodal" id="modalCall" aria-hidden="true">
                 <div class="hystmodal__wrap">
                     <div class="hystmodal__window hystmodal__window_form" role="dialog" aria-modal="true">
-                        <button data-hystclose class="hystmodal__close hystmodal__close_form"></button>
+                        <button data-hystclose class="hystmodal__close hystmodal__close_form" aria-label="Закрыть"></button>
                         <div class="form form_modal">
                             <h3 class="form__title">Заказать звонок</h3>
                             <form action="#" method="POST" class="form__body form-contact">      
@@ -446,7 +486,7 @@
 		            <div class="hystmodal" id="modalProduct" aria-hidden="true">
                 <div class="hystmodal__wrap">
                     <div class="hystmodal__window hystmodal__window_product" role="dialog" aria-modal="true">
-                        <button data-hystclose class="hystmodal__close hystmodal__close_product"></button>
+                        <button data-hystclose class="hystmodal__close hystmodal__close_product" aria-label="Закрыть"></button>
                         <div class="product-modal">
                             <div class="product-modal__img-wrap">
                                 <img class="product-modal__img" src="./images/dist/product-pages/product.webp" alt="Товар">
@@ -505,7 +545,7 @@
 		            <div class="hystmodal" id="modalPrice" aria-hidden="true">
                 <div class="hystmodal__wrap">
                     <div class="hystmodal__window hystmodal__window_form" role="dialog" aria-modal="true">
-                        <button data-hystclose class="hystmodal__close hystmodal__close_form"></button>
+                        <button data-hystclose class="hystmodal__close hystmodal__close_form" aria-label="Закрыть"></button>
                         <div class="form form_modal">
                             <h3 class="form__title">Получить прайс</h3>
                             <form action="#" method="POST" class="form__body form-contact">      
@@ -550,7 +590,7 @@
 		            <div class="hystmodal" id="modalSuccessful" aria-hidden="true">
                 <div class="hystmodal__wrap">
                     <div class="hystmodal__window hystmodal__window_successful" role="dialog" aria-modal="true">
-                        <button data-hystclose class="hystmodal__close hystmodal__close_successful"></button>
+                        <button data-hystclose class="hystmodal__close hystmodal__close_successful" aria-label="Закрыть"></button>
                         <div class="modal">
                             <div class="modal__title">Ваше сообщение отправлено</div>
                             <div class="modal__description">Мы получили ваше сообщение и ответим на него как можно скорее</div>
@@ -566,7 +606,7 @@
 		            <div class="hystmodal" id="modalShopsBelR" aria-hidden="true">
                 <div class="hystmodal__wrap">
                     <div class="hystmodal__window hystmodal__window_shop" role="dialog" aria-modal="true">
-                        <button data-hystclose class="hystmodal__close hystmodal__close_shop"></button>
+                        <button data-hystclose class="hystmodal__close hystmodal__close_shop" aria-label="Закрыть"></button>
                         <div class="modal modal_big">
                             <span class="modal__title modal__title_big">Сеть магазинов  “Белорусские рецепты”</span>
                             <div class="modal__container">
@@ -781,7 +821,7 @@
 		            <div class="hystmodal" id="modalShopsCheese" aria-hidden="true">
                 <div class="hystmodal__wrap">
                     <div class="hystmodal__window hystmodal__window_shop" role="dialog" aria-modal="true">
-                        <button data-hystclose class="hystmodal__close hystmodal__close_shop"></button>
+                        <button data-hystclose class="hystmodal__close hystmodal__close_shop" aria-label="Закрыть"></button>
                         <div class="modal modal_big">
                             <span class="modal__title modal__title_big">Сеть магазинов  “Сыр да масло”</span>
                             <div class="modal__container">
@@ -996,7 +1036,7 @@
 		            <div class="hystmodal" id="modalShopsAll" aria-hidden="true">
                 <div class="hystmodal__wrap">
                     <div class="hystmodal__window hystmodal__window_shop" role="dialog" aria-modal="true">
-                        <button data-hystclose class="hystmodal__close hystmodal__close_shop"></button>
+                        <button data-hystclose class="hystmodal__close hystmodal__close_shop" aria-label="Закрыть"></button>
                         <div class="modal modal_big">
                             <span class="modal__title modal__title_big">Сеть магазинов  “Есть все”</span>
                             <div class="modal__container">
