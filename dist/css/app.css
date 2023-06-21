@@ -8161,7 +8161,7 @@ swiper-container .swiper-notification {
 }
 
 .categories__wrap:after {
-    background: url(../images/dist/product-page/pattern.svg) no-repeat 50%/contain;
+    background: url(../images/dist/product-pages/pattern.svg) no-repeat 50%/contain;
     content: "";
     height: 80px;
     left: 0;
