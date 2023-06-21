@@ -1,0 +1,136 @@
+.hystmodal {
+    &__window {
+        &_search {
+            border-radius: $radius-card;
+            max-width: 1440px;
+            width: 100%;
+            min-height: 800px;
+        }
+    }
+
+    &__close {
+        &_search {
+            top: 35px;
+            right: 40px;
+            width: 40px;
+            height: 40px;
+            background: url('../images/dist/main-page/search-modal-close.svg') no-repeat center / auto, #ffffff;
+            border-radius: 50%;
+        }
+    }
+}
+
+.search-modal {
+    @include flex($dir: column, $ai: stretch);
+
+    &__top-panel {
+        @include flex($dir: column, $ai: stretch);
+        gap: 57px;
+        width: 100%;
+        background-color: #D7DCD6;
+        border-radius: $radius-card;
+        padding: 38px 40px 55px;
+    }
+
+    &__title {
+        display: inline-flex;
+        font-family: $userfont1;
+        font-weight: 400;
+        font-size: 26px;
+        line-height: 110%;
+        margin-right: 90px;        
+    }
+
+    &__search-wrap {
+        @include flex;
+        gap: 15px;
+    }
+
+    &__input-wrap {
+        position: relative;
+        width: 100%;
+
+        &::before {
+            position: absolute;
+            z-index: 1;
+            content: '';
+            top: 10px;
+            right: 19px;
+            width: 16px;
+            height: 16px;
+            background: url('../images/dist/header/search.svg') no-repeat center / contain;
+        }
+    }
+
+    &__input {
+        z-index: 0;
+        width: 100%;
+        height: 37px;
+        border: none;
+        border-radius: $radius-search;
+        padding: 0px 45px 0 19px;
+
+        transition: box-shadow $transition;
+
+        &::placeholder {
+            @include font($sz: rem(16), $lh: 120%, $wt: 400);
+            color: $textcolor-light-gray;
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: 4px 4px 12px rgba(42, 42, 42, 0.30);
+        }
+    }
+
+    &__button {
+        padding: 10px 35px 14px;
+    }
+
+    &__bottom-panel {
+        padding: 27px 40px;
+    }
+
+    &__list {
+        max-height: 528px;
+        overflow-y: auto;
+        @include flex($dir: column, $jc: flex-start, $ai: stretch);
+        gap: 20px;
+        padding: 10px 20px 10px 0;
+
+        &::-webkit-scrollbar {
+            width: 8px;
+            height: auto;
+            border-radius: 9em;
+            background-color: #F4F3F8;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            background-color: $accent1;
+            border-radius: 9em;
+        }
+        
+        &::-webkit-scrollbar-thumb:hover {
+            background-color: $accent1;
+        }
+    }
+
+    &__info,
+    &__result {
+        font-family: $userfont1;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 120%;
+        color: $textcolor-dark;       
+    }
+
+    &__result {
+        transition: color $transition;
+
+        &:hover {
+            color: $accent1;
+        }
+    }
+}
+
+@import '_media-modal-search';

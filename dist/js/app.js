@@ -183,12 +183,38 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 	toggleListShops();
 
+	// Активация карты
+	let cover = document.querySelector('.shops__not-drug');
+
+	if(cover) {
+		cover.addEventListener('click', () => {
+			cover.style.display = 'none';
+		});
+	}
+
 	// Модальное окно обратного звонка
 	const modalCall = new HystModal({
 		linkAttributeName: "data-modalcall",
 		backscroll: false,
 		catchFocus: false,
 	});
+
+	// Модальное окно результатов поиска
+	const modalSearch = new HystModal({
+		linkAttributeName: "data-modalSearch",
+		backscroll: false,
+		catchFocus: false,
+	});
+
+	let inputSearch = document.querySelectorAll('.search__input');
+
+	if(inputSearch) {
+		inputSearch.forEach(input => input.addEventListener('keyup', (e) => {
+			if (e.keyCode === 13) {
+				modalSearch.open('#modalSearch')
+			}
+		}))
+	}
 
 	// Модальное окно продукта
 	const modalProduct = new HystModal({
@@ -239,7 +265,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		catchFocus: false,
 		backscroll: false,
 	});
-
 
 	//Слайдер с преимуществами
 	const advantagesSlider = new Swiper('.advantages__gallery', {
