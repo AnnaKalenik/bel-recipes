@@ -51,14 +51,23 @@ document.addEventListener('DOMContentLoaded', () => {
     function toggleSearch() {
 		const btn = document.querySelector('#btn-search');
 		const panel = document.querySelector('.search__panel');
-		const input = document.querySelector('.search__input');
-		
-		btn.addEventListener('click', () => {
-			if (btn) {
-                panel.classList.toggle('open');
-                input.value = '';
-            }
-		})
+
+		if (btn) {
+			btn.addEventListener('click', (e) => {
+				e.stopPropagation();
+				panel.classList.toggle('open');
+	
+				document.addEventListener('click', (e) => {
+					let target = e.target;
+					let its_panel = target == panel || panel.contains(target);
+					let panel_is_active = panel.classList.contains('open');
+					
+					if (!its_panel && panel_is_active) {
+						panel.classList.toggle('open');
+					}
+				})
+			})
+		}
 	}
     toggleSearch();
 
