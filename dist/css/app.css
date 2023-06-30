@@ -70,10 +70,6 @@
     src: url(../fonts/Gilroy/Gilroy-ExtraBold.woff2) format("woff2")
 }
 
-html {
-    scroll-behavior: smooth
-}
-
 ::-webkit-scrollbar {
     width: 0
 }
@@ -2332,13 +2328,15 @@ swiper-container .swiper-notification {
         gap: 15px
     }
 
-    .social-links__item_footer {
-        display: none !important
-    }
-
     .social-links__icon_footer {
         height: 30px;
         width: 30px
+    }
+}
+
+@media (max-width:425px) {
+    .social-links_footer {
+        gap: 10px
     }
 }
 
@@ -4488,31 +4486,6 @@ swiper-container .swiper-notification {
     z-index: 0
 }
 
-.about__marker:hover {
-    -webkit-box-shadow: 4px 4px 20px rgba(42, 42, 42, .1);
-    box-shadow: 4px 4px 20px rgba(42, 42, 42, .1)
-}
-
-.about__marker:hover .about__icon:after,
-.about__marker:hover:after {
-    opacity: 0
-}
-
-.about__marker:hover .about__icon:before {
-    opacity: 1
-}
-
-.about__marker:hover .about__window {
-    opacity: 1;
-    -webkit-transform: scaleY(1);
-    -ms-transform: scaleY(1);
-    transform: scaleY(1);
-    -webkit-transform: translateY(0);
-    -ms-transform: translateY(0);
-    transform: translateY(0);
-    z-index: 0
-}
-
 .about__marker_1 {
     left: 265px;
     top: 63px;
@@ -4950,6 +4923,60 @@ swiper-container .swiper-notification {
     }
 }
 
+@media (min-width:992px) {
+    .about__marker:hover {
+        -webkit-box-shadow: 4px 4px 20px rgba(42, 42, 42, .1);
+        box-shadow: 4px 4px 20px rgba(42, 42, 42, .1)
+    }
+
+    .about__marker:hover .about__icon:after,
+    .about__marker:hover:after {
+        opacity: 0
+    }
+
+    .about__marker:hover .about__icon:before {
+        opacity: 1
+    }
+
+    .about__marker:hover .about__window {
+        opacity: 1;
+        -webkit-transform: scaleY(1);
+        -ms-transform: scaleY(1);
+        transform: scaleY(1);
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+        z-index: 0
+    }
+}
+
+@media (max-width:991px) {
+    .about__marker_active {
+        -webkit-box-shadow: 4px 4px 20px rgba(42, 42, 42, .1);
+        box-shadow: 4px 4px 20px rgba(42, 42, 42, .1)
+    }
+
+    .about__marker_active .about__icon:after,
+    .about__marker_active:after {
+        opacity: 0
+    }
+
+    .about__marker_active .about__icon:before {
+        opacity: 1
+    }
+
+    .about__marker_active .about__window {
+        opacity: 1;
+        -webkit-transform: scaleY(1);
+        -ms-transform: scaleY(1);
+        transform: scaleY(1);
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+        z-index: 0
+    }
+}
+
 @media (max-width:940px) {
     .about__marker_1 {
         left: 7vw;
@@ -5034,7 +5061,7 @@ swiper-container .swiper-notification {
         width: 32px
     }
 
-    .about__marker:hover:after {
+    .about__marker_active:after {
         opacity: 1
     }
 

@@ -3,20 +3,21 @@ document.addEventListener('DOMContentLoaded', () => {
 	//Фиксация хедера
 	function stickyHeader() {
 		const header = document.querySelector('.header');
+		let indentTop;
 		let scrollPrev = 0;
 
-		if (window.matchMedia("(min-width: 1201px)").matches) {
+		function listenScroll (indentTop) {
 			window.addEventListener('scroll', () => {
-				let scrolled = window.pageYOffset;
+				scrolled = window.pageYOffset;
 
-				if (scrolled > 58 && scrolled > scrollPrev) {
+				if (scrolled > indentTop && scrolled > scrollPrev) {
 					header.classList.add('header_out');
 				} else {
 					header.classList.remove('header_out');
 					header.classList.add('header_full-screen');
 				}
 
-				if (scrolled < 58 ) {
+				if (scrolled < indentTop) {
 					header.classList.remove('header_out');
 					header.classList.remove('header_full-screen');
 				} 
@@ -24,26 +25,58 @@ document.addEventListener('DOMContentLoaded', () => {
 				scrollPrev = scrolled;
 			})
 		}
-		
-		if (window.matchMedia("(max-width: 1200px)").matches) {
-			window.addEventListener('scroll', () => {
-				let scrolled = window.pageYOffset;
 
-				if (scrolled > 27 && scrolled > scrollPrev) {
-					header.classList.add('header_out');
-				} else {
-					header.classList.remove('header_out');
-					header.classList.add('header_full-screen');
-				}
+		if (window.matchMedia("(min-width: 1201px)").matches) indentTop = 58;
+		if (window.matchMedia("(max-width: 1200px)").matches) indentTop = 27;
 
-				if (scrolled < 27 ) {
-					header.classList.remove('header_out');
-					header.classList.remove('header_full-screen');
-				} 
-	
-				scrollPrev = scrolled;
-			})
+		scrolled = window.pageYOffset;
+
+		if (scrolled > indentTop) {
+			header.classList.add('header_out');
+			listenScroll(indentTop);
+		} else {
+			listenScroll(indentTop);
 		}
+
+		// if (window.matchMedia("(min-width: 1201px)").matches) {
+		// 	window.addEventListener('scroll', () => {
+		// 		let scrolled = window.pageYOffset;
+
+		// 		if (scrolled > 58 && scrolled > scrollPrev) {
+		// 			header.classList.add('header_out');
+		// 		} else {
+		// 			header.classList.remove('header_out');
+		// 			header.classList.add('header_full-screen');
+		// 		}
+
+		// 		if (scrolled < 58 ) {
+		// 			header.classList.remove('header_out');
+		// 			header.classList.remove('header_full-screen');
+		// 		} 
+	
+		// 		scrollPrev = scrolled;
+		// 	})
+		// }
+
+		// if (window.matchMedia("(max-width: 1200px)").matches) {
+		// 	window.addEventListener('scroll', () => {
+		// 		let scrolled = window.pageYOffset;
+
+		// 		if (scrolled > 27 && scrolled > scrollPrev) {
+		// 			header.classList.add('header_out');
+		// 		} else {
+		// 			header.classList.remove('header_out');
+		// 			header.classList.add('header_full-screen');
+		// 		}
+
+		// 		if (scrolled < 27 ) {
+		// 			header.classList.remove('header_out');
+		// 			header.classList.remove('header_full-screen');
+		// 		} 
+	
+		// 		scrollPrev = scrolled;
+		// 	})
+		// }
 	}
 	stickyHeader();
 	
@@ -88,6 +121,21 @@ document.addEventListener('DOMContentLoaded', () => {
 		navLinks.forEach(link => link.addEventListener('click', toggleClasses))
 	}
 	toggleBurger();
+
+	// Открытие окон в блоке "О нас" при клике на маркер
+	function toggleMarkers() {
+		const markers = document.querySelectorAll('.about__marker');
+
+		markers.forEach(marker => marker.addEventListener('click', () => {
+			if(marker.classList.contains('about__marker_active')) {
+				marker.classList.toggle('about__marker_active');
+			} else {
+				markers.forEach(marker => marker.classList.remove('about__marker_active'));
+				marker.classList.toggle('about__marker_active');
+			}
+		}))
+	}
+	toggleMarkers();
 
 	// Tooltip на странице "О нас"
 	function toggleTooltip() {
@@ -253,13 +301,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		backscroll: false,
 	});
 
-	const modalBelr = document.getElementById('modalShopsBelR');
-	const listLinksBelr = modalBelr.querySelectorAll('.modal__address-link');
+	// const modalBelr = document.getElementById('modalShopsBelR');
+	// const listLinksBelr = modalBelr.querySelectorAll('.modal__address-link');
 
-	listLinksBelr.forEach(link => link.addEventListener('click', function () {
-		console.log(modalShops1);
-		modalShops1.close();
-	}));
+	// listLinksBelr.forEach(link => link.addEventListener('click', function () {
+	// 	console.log(modalShops1);
+	// 	modalShops1.close();
+	// }));
 
 	// Модальное окно списка магазинов "Сыр и масло"
 	const modalShops2 = new HystModal({

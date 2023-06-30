@@ -91,26 +91,6 @@
             opacity: 1;
         }
 
-        &:hover {
-            box-shadow: 4px 4px 20px rgba(42, 42, 42, 0.1);
-        }
-
-        &:hover::after,
-        &:hover .about__icon::after {
-            opacity: 0;
-        }
-
-        &:hover .about__icon::before {
-            opacity: 1;
-        }
-
-        &:hover .about__window {
-            transform: scaleY(1);
-            transform: translateY(0);
-            opacity: 1;
-            z-index: 0;
-        }
-
         &_1 {
             top: 63px;
             left: 265px;
@@ -236,6 +216,7 @@
         transform: translateY(-80%);
         opacity: 0;
         z-index: -10;
+        pointer-events: none;
 
         &_right {
             right: auto;
